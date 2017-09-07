@@ -1,239 +1,131 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+# language_tabs: # must be one of https://git.io/vQNgJ
+#   - shell
+#   - ruby
+#   - python
+#   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
-includes:
-  - errors
+# includes:
+#  - errors
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+EBMeDS is a blablabla.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Components
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+![EBMeDS architecture](images/EBMeDS-architecture.png)
 
-# Authentication
+When fully deployed, the EBMeDS solution includes the components pictured above. Each component is a Docker container, inside a Docker Swarm. Any of these components can be replicated across several machines, as performance and availability needs dictate. Docker Swarm performs an automatic round-robin load balancing on every network request done to any container with multiple instances.
 
-> To authorize, use this code:
+## api-gateway
 
-```ruby
-require 'kittn'
+Github: [](https://github.com/ebmeds/api-gateway)
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+The API gateway is the access point from the outside world. It mostly acts as a request broker, forwarding requests to the appropriate containers, usually the engine. At the moment, it also provides the translation services between FHIR and the EBMeDS native XML format.
 
-```python
-import kittn
+### Input
 
-api = kittn.authorize('meowmeowmeow')
-```
+FHIR requests, EBMeDS XML requests.
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+### Output
 
-```javascript
-const kittn = require('kittn');
+FHIR, EBMeDS XML, custom JSON formats.
 
-let api = kittn.authorize('meowmeowmeow');
-```
+### Future plans
 
-> Make sure to replace `meowmeowmeow` with your API key.
+1. Refactor FHIR format conversion into a separate service.
+2. Implement user authentication.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+## engine
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+The main service, performing most of the calculations when performing decision support. Takes patient XML data as an input, and outputs data to aid in clinical decision making. Most notably, text-based reminder messages.
 
-`Authorization: meowmeowmeow`
+### Input
+
+EBMeDS XML.
+
+### Output
+
+EBMeDS XML, custom JSON formats.
+
+## coaching
+
+An ODA-specific container, may or may not be present in the future. A simple REST interface providing access to coaching programs produced by Duodecim. These programs are given in FHIR STU3 form, and contain a number of messages that are to be sent to a patient at set times to aid in e.g. weight loss, cutting down on alcohol consumtion etc.
+
+### Input
+
+HTTP REST requests.
+
+### Output
+
+FHIR
+
+## diagnosis-specific-view
+
+A UI providing a specialised view of the results obtained from the engine, for a specific patient. This container works like a kind of proxy to the engine: instead of sending the XML with patient data to the engine, it is sent to this container. The request is sent onward to the engine with some special flags, making the engine produce a specialised JSON format, that this container renders as HTML for the user. The JSON can also be sent directly to the user, should he want to build his own UI.
+
+### Input
+
+EBMeDS XML
+
+### Output
+
+HTML
+
+## comprehensive-medication-review
+
+Similar to diagnosis-specific-view, this is another specialised UI view, focusing on medication.
+
+### Input
+
+EBMeDS XML
+
+### Output
+
+HTML
+
+## elasticsearch
+
+A standard Elasticsearch container, i.e. a database. Used for logging by all other containers (via logstash). Also, the engine saves request/response pairs to a separate index for debugging and statistics.
+
+### Indices
+
+* *logstash*: app logs from all other containers
+* *engine*: request/response messages
+
+## logstash
+
+A standard Logstash container. Logs from all other containers are sent here, where they are queued and tagged with some extra metadata.
+
+## kibana
+
+A standard Kibana container. Kibana works as a web UI for inspecting logs or any other elasticsearch data. At the moment Kibana in EBMeDS is only geared towards use by system administrators and developers, but there is some demand for users to be able to access their own logs. It should be noted that with standard settings, Elasticsearch and Kibana have no user or namespace support, everything is global. This can be changed by getting an X-Pack license, which is costly.
+
+# Supporting tools
+
+There are a number of tools external to the EBMeDS deployment that is used primarily by Duodecim to produce content. These are hosted by Duodecim.
+
+## Script editor
+
+URL: [](http://www.ebmeds.org/script_editor.asp?mode=framesets)
+
+Web-based UI for editing engine scripts (i.e. rulesets). Individual scripts can be set to apply to e.g. certain organizations, certain countries/languages or certain events. The text reminders are also defined here, as well as their translations.
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+This script editor will be replaced by a new version soon.
 </aside>
 
-# Kittens
+### Compilation
 
-## Get All Kittens
+The scripts and their accompanying data is compiled from the script editor into text files that can be read by the engine. This compilation process also includes "numerical" medical data, i.e. databases of drug interactions etc. Some of this data is bought from other companies, some of it is produced in-house.
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+##
