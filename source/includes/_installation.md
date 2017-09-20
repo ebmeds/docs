@@ -41,15 +41,21 @@ The built Docker images are stored in a repository on quay.io. Vendor organizati
 
 ### Pull the Docker images
 
-You need the proper Docker images downloaded ("pulled") onto your server before running them. This is true for single-machine servers and for each node in larger clusters.
-
 ```bash
 # Go to the downloaded ebmeds-docker repository
 cd /path/to/ebmeds-docker
 
-# Run script that downloads the correct docker images and tags them
+# Run script that downloads the latest stable version of the images
 ./get-images.sh
+
+# OR if one wishes to use e.g. the latest unstable version
+./get-images.sh dev
+
+# OR if one wishes to use a specific old version (not recommended)
+./get-images.sh 2.0.1
 ```
+
+You need the proper Docker images downloaded ("pulled") onto your server before running them. This is true for single-machine servers and for each node in larger clusters.
 
 The `get-images.sh` script will ask for the username/password of the EBMeDS Docker registry located at `quay.io`. These credentials are supplied by Duodecim. It will then pull the appropriate docker images and tag them with the following names:
 
