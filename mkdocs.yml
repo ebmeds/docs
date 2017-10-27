@@ -1,0 +1,9 @@
+site_name: EBMeDS 2.0
+pages:
+  - Home: index.md
+  - Components: components.md
+  - Installation: installation.md
+  - API:
+    - FHIR STU3: api/fhir-stu3.md
+    - XML: api/xml.md
+#theme: readthedocs

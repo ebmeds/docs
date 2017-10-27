@@ -8,68 +8,43 @@ When fully deployed, the EBMeDS solution includes the components pictured above.
 
 Github: [](https://github.com/ebmeds/api-gateway)
 
-The API gateway is the access point from the outside world. It mostly acts as a request broker, forwarding requests to the appropriate containers, usually the engine. At the moment, it also provides the translation services between FHIR and the EBMeDS native XML format. Another output option is a custom internal JSON format as used by the apps
+The API gateway is the access point from the outside world. It mostly acts as a request broker, forwarding requests to the appropriate containers, usually the engine. At the moment, it also provides the translation services between FHIR and the EBMeDS native XML format. Another output option is a custom JSON format used by some EBMeDS-connected apps.
 
-### Input
+* Input: FHIR requests, EBMeDS XML requests.
 
-FHIR requests, EBMeDS XML requests.
-
-### Output
-
-FHIR, EBMeDS XML, custom JSON formats.
-
-### Future plans
-
-1. Refactor FHIR format conversion into a separate service.
-2. Implement user authentication.
+* Output: FHIR, EBMeDS XML, custom JSON formats.
 
 ## engine
 
-The main service, performing most of the calculations when performing decision support. Takes patient XML data as an input, and outputs data to aid in clinical decision making. Most notably, text-based reminder messages.
+The main service, performing most of the calculations when performing decision support. Takes patient XML data as an input, and outputs data to aid in clinical decision making. Most notably, text-based reminder messages. Also produces
 
-### Input
+* Input: EBMeDS XML
 
-EBMeDS XML.
-
-### Output
-
-EBMeDS XML, custom JSON formats.
+* Output: EBMeDS XML, custom JSON formats
 
 ## coaching
 
 An ODA-specific container, may or may not be present in the future. A simple REST interface providing access to coaching programs produced by Duodecim. These programs are given in FHIR STU3 form, and contain a number of messages that are to be sent to a patient at set times to aid in e.g. weight loss, cutting down on alcohol consumtion etc.
 
-### Input
+* Input: HTTP REST requests.
 
-HTTP REST requests.
-
-### Output
-
-FHIR
+* Output: FHIR
 
 ## diagnosis-specific-view
 
 A UI providing a specialised view of the results obtained from the engine, for a specific patient. This container works like a kind of proxy to the engine: instead of sending the XML with patient data to the engine, it is sent to this container. The request is sent onward to the engine with some special flags, making the engine produce a specialised JSON format, that this container renders as HTML for the user. The JSON can also be sent directly to the user, should he want to build his own UI.
 
-### Input
+* Input: EBMeDS XML
 
-EBMeDS XML
-
-### Output
-
-HTML
+* Output: HTML
 
 ## comprehensive-medication-review
 
 Similar to diagnosis-specific-view, this is another specialised UI view, focusing on medication.
 
-### Input
+* Input: EBMeDS XML
 
-EBMeDS XML
-
-### Output
-
-HTML
+* Output: HTML
 
 ## elasticsearch
 
@@ -77,8 +52,8 @@ A standard Elasticsearch container, i.e. a database. Used for logging by all oth
 
 ### Indices
 
-* *logstash*: app logs from all other containers
-* *engine*: request/response messages
+* `logstash-*`: app logs from all other containers
+* `engine-*`: request/response messages
 
 ## logstash
 
@@ -98,9 +73,7 @@ URL: [](http://www.ebmeds.org/script_editor.asp?mode=framesets)
 
 Web-based UI for editing engine scripts (i.e. rulesets). Individual scripts can be set to apply to e.g. certain organizations, certain countries/languages or certain events. The text reminders are also defined here, as well as their translations.
 
-<aside class="notice">
 This script editor will be replaced by a new version soon.
-</aside>
 
 ### Compilation
 

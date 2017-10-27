@@ -94,16 +94,19 @@ Assuming that the Docker images are available on the machine, there are a bunch 
 
 ```bash
 # Example of how to start a service manually
+docker swarm init
+docker network create --driver overlay ebmedsnet
 docker service create \
   --name api-gateway \
   -e LISTEN_PORT=3001 \
-  -e ENGINE_URL=http://engine:3002/dss.asp?mode=test \
+  -e ENGINE_URL='http://engine:3002/dss.asp?mode=test' \
   --network ebmedsnet \
   --publish 3001:3001 \
   --replicas=3 \
   --update-delay 10s \
   --update-parallelism 1 \
   api-gateway
+docker service create ...
 ```
 
 The oldest supported version of Docker does not have support for Docker Compose files when used together with Docker Swarm. Therefore the command `npm run docker:start` will not work, and the `docker-compose.yml` file must be transformed into e.g. shell scripts that set up the services manually. For example, starting the `api-gateway` service manually (see the example) is a matter of setting environment variables, publishing a port, setting the number of replicas and optionally setting some update settings for Docker's rolling updates.
