@@ -3,7 +3,17 @@ pages:
   - Home: index.md
   - Components: components.md
   - Installation: installation.md
-  - API:
-    - FHIR STU3: api/fhir-stu3.md
-    - XML: api/xml.md
+  - FHIR:
+    - Getting started: api/fhir/getting-started.md
+    - CDS hooks: api/fhir/cds-hooks.md
+    - Resources: api/fhir/resources.md
+    - Code Systems: api/fhir/code-systems.md
+    - Extensions: api/fhir/extensions.md
+  - XML:
+    - Getting started: api/xml/getting-started.md
+    - XML schema: api/xml/xml-schema.md
+  - Security: security.md
+  # - API:
+  #   - FHIR STU3: api/fhir-stu3.md
+  #   - XML: api/xml.md
 #theme: readthedocs

@@ -7,7 +7,7 @@ EBMeDS can be used with the [HL7 FHIR STU3](https://www.hl7.org/fhir/STU3/) form
 One can interact with EBMeDS using FHIR in the following ways:
 
 * Using a custom REST interface to retrieve static FHIR resources (Questionnaire, PlanDefinition, Goal)
-* Using [CDS Hooks](http://cds-hooks.org) to call decision support. Input and output resource types depend on the hook.
+* Using [CDS Hooks](http://cds-hooks.org) to call decision support. Input and output data depend on the hook.
 
 ## Custom REST API
 
