@@ -6,7 +6,7 @@ The overall point of CDS hooks is that the calling party calls EBMeDS using thre
 
 * The REST endpoint name (the "hook ID"), giving the high-level context, e.g. `selfcare-questionnaire-filled`.
 * The hook name, providing the action/event that triggered this particular call, e.g. `questionnaire-completed`.
-* The clinical data specified in the EBMeDS hook catalog (below).
+* The clinical data specified in the [EBMeDS hook catalog](hook-catalog.md).
 
 This enables EBMeDS to tailor its output depending on the usage context, and also to provide a machine-readable format for what data is required. The context itself is not machine-readable, i.e. it is described by natural language, but some [standardized hooks exist](http://cds-hooks.org/#hook-catalog).
 

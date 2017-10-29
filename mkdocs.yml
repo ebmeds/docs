@@ -6,10 +6,12 @@ pages:
   - FHIR:
     - Getting started: api/fhir/getting-started.md
     - CDS hooks: api/fhir/cds-hooks.md
+    - Hook catalog: api/fhir/hook-catalog.md
     - Custom REST: api/fhir/custom-rest.md
     - Resources: api/fhir/resources.md
     - Code Systems: api/fhir/code-systems.md
     - Extensions: api/fhir/extensions.md
+    - ODA-specific information: api/fhir/oda.md
   - XML:
     - Getting started: api/xml/getting-started.md
     - XML schema: api/xml/xml-schema.md
