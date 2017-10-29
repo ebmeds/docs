@@ -6,6 +6,7 @@ pages:
   - FHIR:
     - Getting started: api/fhir/getting-started.md
     - CDS hooks: api/fhir/cds-hooks.md
+    - Custom REST: api/fhir/custom-rest.md
     - Resources: api/fhir/resources.md
     - Code Systems: api/fhir/code-systems.md
     - Extensions: api/fhir/extensions.md
