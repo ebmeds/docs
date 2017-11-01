@@ -15,7 +15,7 @@ pages:
   - XML:
     - Getting started: api/xml/getting-started.md
     - XML schema: api/xml/xml-schema.md
-  - Security: security.md
+  - Security & Error handling: security.md
   # - API:
   #   - FHIR STU3: api/fhir-stu3.md
   #   - XML: api/xml.md

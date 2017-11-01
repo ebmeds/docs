@@ -41,3 +41,30 @@ This type of logging can naturally be turned off completely.
 Regular "system logs" from the internal microservices, interesting mainly for system administrators and developers. All services use the [Bunyan logging library](https://github.com/trentm/node-bunyan) which in turn sends the logs to Logstash, and finally they end up in Elasticsearch. Bunyan, like so many other logging libraries, has the concept of *log levels*, i.e. the quantified importance of a particular log message. In normal operation, logging is only done on the `info` log level, meaning that the levels `info`, `warn`, `error`, `fatal` actually end up in the log database.
 
 **NOTE**: If the log level is set lower than `info`, i.e. if it is set to `debug` or `trace`, there may be some logging of patient data, in the form of internal data structures that are displayed in the logs. Do not use these log levels in production, at least not if you want to avoid storing patient data.
+
+# Error handling
+
+EBMeDS 2.0 uses standard HTTP error codes in its API. In addition to this, a JSON body is returned with some additional information, if available.
+
+Example:
+
+```json
+{
+  "statusCode": 400,
+  "message": "Validation error: QuestionnaireResponse did not validate against Questionnaire.",
+  "code": 'validation',
+}
+```
+
+* `statusCode`: The same numerical HTTP error code as in the HTTP headers.
+* `message`: A human-readable error message.
+* `code` (**optional**): A short string describing special error types, for errors with a definite meaning to the caller. Is not necessarily present in all error messages. The types at the moment are:
+    * `validation`: The user sent a request that failed validation in some way.
+    * `questionnaire-deprecated`: The entire questionnaire has been removed from production and should not be used.
+    * `questionnaire-version-deprecated`: This specific version of the questionnaire has been removed from production, please use a newer version.
+
+## Retrying requests
+
+As a general rule of thumb, 4xx errors require some action on the calling side, while 5xx errors are server-side. For 5xx errors, especially HTTP error 503 (service busy/unavailable), it is prudent to retry the request after a short wait, in case the error is transient in nature.
+
+
