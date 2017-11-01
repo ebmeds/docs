@@ -1,5 +1,7 @@
 # EBMeDS Hook Catalog
 
+Below we list the available CDS hook endpoints, i.e. the REST endpoints at `[base-url]/cds-services/[endpoint]`.
+
 ## /selfcare-filled-questionnaire
 
 *Hook: 'questionnaire-completed'*

@@ -42,6 +42,8 @@ Regular "system logs" from the internal microservices, interesting mainly for sy
 
 **NOTE**: If the log level is set lower than `info`, i.e. if it is set to `debug` or `trace`, there may be some logging of patient data, in the form of internal data structures that are displayed in the logs. Do not use these log levels in production, at least not if you want to avoid storing patient data.
 
+
+
 # Error handling
 
 EBMeDS 2.0 uses standard HTTP error codes in its API. In addition to this, a JSON body is returned with some additional information, if available.
@@ -51,17 +53,22 @@ Example:
 ```json
 {
   "statusCode": 400,
-  "message": "Validation error: QuestionnaireResponse did not validate against Questionnaire.",
+  "message": "Validation error: QuestionnaireResponse did not validate against Questionnaire: [more info]",
   "code": 'validation',
 }
 ```
 
 * `statusCode`: The same numerical HTTP error code as in the HTTP headers.
 * `message`: A human-readable error message.
-* `code` (**optional**): A short string describing special error types, for errors with a definite meaning to the caller. Is not necessarily present in all error messages. The types at the moment are:
-    * `validation`: The user sent a request that failed validation in some way.
-    * `questionnaire-deprecated`: The entire questionnaire has been removed from production and should not be used.
-    * `questionnaire-version-deprecated`: This specific version of the questionnaire has been removed from production, please use a newer version.
+* `code` (**optional**): A short string describing special error types, for errors with a definite meaning to the caller. Is not necessarily present in all error messages. The available types are found below.
+
+## Error types
+
+In addition to the HTTP status code, some errors may have a more specific type attached to it. The current list of types is:
+
+* `validation`: The user sent a request that failed validation in some way.
+* `questionnaire-deprecated`: The entire questionnaire has been removed from production and should not be used.
+* `questionnaire-version-deprecated`: This specific version of the questionnaire has been removed from production, please use a newer version.
 
 ## Retrying requests
 

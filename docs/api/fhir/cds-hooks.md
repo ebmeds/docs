@@ -20,7 +20,7 @@ This enables EBMeDS to tailor its output depending on the usage context, and als
 
 ## CDS hooks REST API
 
-The REST API for CDS hooks is very simple. One can `GET` the list of available hooks (the "hook catalog") from `[base-url]/cds-services`, and one calls a hook by `POST`ing to `[base-url]/cds-services/[hook-name]`. The base URL depends on where and how EBMeDS is installed: one example is `https://ebmedscloud.org`.
+The REST API for CDS hooks is very simple. One can `GET` the list of available hooks (the "hook catalog") from `[base-url]/cds-services`, and one calls a hook by `POST`ing to `[base-url]/cds-services/[hook-name]`. The base URL depends on where and how EBMeDS is installed: one example is `https://ebmedscloud.org/api/fhir/v1`.
 
 ## Hook description format
 
@@ -40,7 +40,7 @@ We will continue with the `questionnaire-completed` example mentioned briefly ab
 
 So what does this mean? Let's go through the hook description field by field:
 
-* `id`: Again, the main identifier for the hook in question. This field determines the URL used when calling the hook, e.g. `https://ebmedscloud.org/cds-services/selfcare-filled-questionnaire`. At the same time, the `id` provides the most high level context for this hook. The value is unique.
+* `id`: Again, the main identifier for the hook in question. This field determines the URL used when calling the hook, e.g. `https://ebmedscloud.org/api/fhir/v1/cds-services/selfcare-filled-questionnaire`. At the same time, the `id` provides the most high level context for this hook. The value is unique.
 * `hook`: The action or event that triggers this hook. The `hook` value is not unique, there may be many different CDS hooks (at different REST endpoints i.e. with a different `id`) that all have the same `hook` value. The idea is to develop a standardized set of hooks that behave the same in any CDS system. In this case, `questionnaire-completed` is a non-standard hook, specific to EBMeDS.
 * `name`: A short description of the hook.
 * `description`: A longer description of the hook.
