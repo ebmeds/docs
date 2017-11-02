@@ -2,6 +2,8 @@
 
 Below we list the available CDS hook endpoints, i.e. the REST endpoints at `[base-url]/cds-services/[endpoint]`.
 
+**Note**: the FHIR resources to be included in the request are listed (per the CDS hooks standard) as FHIR search strings. However, there is sometimes not enough granularity available in FHIR STU3 searches to specify exactly what is needed. Be aware of this when reading the service descriptions below.
+
 ## /selfcare-filled-questionnaire
 
 *Hook: 'questionnaire-completed'*
@@ -14,6 +16,7 @@ This hook is intended for the self-care context, where an individual (either by 
     * [SelfCareQuestionnaireResponse](resources.md#selfcarequestionnaireresponse) (profile of QuestionnaireResponse)
 * Response
     * SelfCareActivityDefinition (profile of ActivityDefinition)
+
 ### Service description
 
 ```json
@@ -285,5 +288,50 @@ This hook is intended for the self-care context, where an individual (either by 
       ]
     }
   ]
+}
+```
+
+## /selfcare-general-cds
+
+The so-called general CDS is the traditional way of using EBMeDS, where as much patient data as possible is sent to the service, and a wide range of reminders and suggested actions are returned.
+
+### Service description
+
+```json
+{
+  "id": "selfcare-general-cds",
+  "hook": "general-cds",
+  "name": "General decision support, no specialization.",
+  "description": "This hook takes as much patient data as possible and returns as many reminders as possible. As well as prefetch data, see the documentation for what can be put in the context property.",
+  "prefetch": {
+    "patient": "Patient/{{Patient.id}}",
+    "allergyIntolerances": "AllergyIntolerance?patient={{Patient.id}}",
+    "familyMemberHistories": "FamilyMemberHistory?patient={{Patient.id}}",
+    "conditions": "Condition?patient={{Patient.id}}",
+    "observations": "Observation?patient={{Patient.id}}",
+    "medicationStatements": "MedicationStatement?patient={{Patient.id}}",
+    "immunizations": "Immunization?patient={{Patient.id}}",
+    "procedures": "Procedure?patient={{Patient.id}}",
+    "procedureRequests": "ProcedureRequest?patient={{Patient.id}}"
+  }
+}
+```
+
+## /selfcare-monitoring
+
+Given a MonitoringGoal and related measurements (e.g. a weight loss goal and weight measurements), provide feedback on the progress.
+
+### Service description
+
+```json
+{
+  "id": "selfcare-monitoring",
+  "hook": "selfcare-monitoring",
+  "name": "Monitoring of certain observations for self-care purposes",
+  "description": "This hook takes a MonitoringGoal resource and a bundle of associated MeasurementObservations and returns textual feedback on the user's progress.",
+  "context": {
+    "goals": "Goal?patient={{Patient.id}}",
+    "measurements": "Observation?patient={{Patient.id}}",
+  }
 }
 ```

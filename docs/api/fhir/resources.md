@@ -421,3 +421,18 @@ And the fields are described as follows.
     * `type` (string): one of `patient`, `practitioner` or `related-person`. Only `patient` is in practical use at the moment.
 * `copyright` (string): A standard copyright notice.
 
+## Resources for general CDS
+
+At the moment, EBMeDS best supports questionnaire-based decision support in FHIR, using the resources described above. For a full-blown CDS service, a large range of other clinical data about a person can and should be included. The resources for describing these is in a very experimental stage, and the profiles will probably change once real-world use is initiated. The documentation is therefore still mostly in the profiles themselves:
+
+* [CDSImmunization](https://simplifier.net/DuodecimCDS/CDSImmunization)
+* [CDSMedicationStatement](https://simplifier.net/DuodecimCDS/CDSMedicationStatement)
+* [CDSProcedure](https://simplifier.net/DuodecimCDS/CDSProcedure)
+* [CDSProcedureRequest](https://simplifier.net/DuodecimCDS/CDSProcedureRequest)
+* [DiagnosisCondition](https://simplifier.net/DuodecimCDS/DiagnosisCondition)
+* [DrugAllergyIntolerance](https://simplifier.net/DuodecimCDS/DrugAllergyIntolerance)
+* [MeasurementObservation](https://simplifier.net/DuodecimCDS/MeasurementObservation)
+* [MonitoringGoal](https://simplifier.net/DuodecimCDS/MonitoringGoal)
+* [NonIdentifiablePatient](https://simplifier.net/DuodecimCDS/NonIdentifiablePatient)
+* [SimpleFamilyMemberHistory](https://simplifier.net/DuodecimCDS/SimpleFamilyMemberHistory)
+
