@@ -17,6 +17,12 @@ This hook is intended for the self-care context, where an individual (either by 
 * Response
     * SelfCareActivityDefinition (profile of ActivityDefinition)
 
+### Versioning info
+
+The version of the Questionnaire resource is tightly bound to the version of the ruleset used in EBMeDS to analyze the QuestionnaireResponse. Therefore the Questionnaire version (along with the Questionnaire ID itself) must be specified in the QuestionnaireResponse. The Questionnaire resource contains the `Questionnaire.url` field which is globally unique. That URL shall be included in the QuestionnaireResponse in the `QuestionnaireResponse.questionnaire.url` field, which gives EBMeDS enough info to infer the version information.
+
+Note that old Questionnaire versions will not be supported indefinitely, and it is strongly recommended to always use the latest available questionnaire version for a given questionnaire. It is up to the calling party to make sure that the newest version is in use, information about new releases are provided by Duodecim using a mechanism agreed upon with the customer.
+
 ### Service description
 
 ```json
@@ -44,10 +50,7 @@ This hook is intended for the self-care context, where an individual (either by 
       "resource": {
         "resourceType": "QuestionnaireResponse",
         "questionnaire": {
-          "identifier": {
-            "system": "https://duodecim.fi/fhir/sid/vkt-questionnaire-id",
-            "value": "21"
-          }
+          "url": "https://www.ebmeds.org/form/api/FHIR/forms/export/21/622"
         },
         "status": "completed",
         "item": [

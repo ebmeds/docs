@@ -19,14 +19,12 @@ The request is given a semantic context using [CDS hooks](cds-hooks.md). Regardl
 
 ## Versioning
 
-The software in EBMeDS naturally has its own version numbering. In addition, EBMeDS uses a wide range of clinical data sources to make its analyses. This data gets continually updated, so EBMeDS has the concept of *data versions*. All the data is contained internally in its own package, which gets new releases on a regular basis. Each release is versioned with a semver version (e.g. v1.0.2).
+There are four major versioning schemes in EBMeDS 2.0:
 
-Usually the caller will always want to use the most up to date data version, which represents the most current clinical knowledge. This is also the default setting.
-
-In some cases, e.g. when asking for decision support for a filled out questionnaire, the data version is important. This is because the Questionnaire resource, also produced by Duodecim, is part of the data package and therefore also has a data version number. The answers to the Questionnaire are analyzed by a ruleset in the engine (a so-called *script*) and the version of this ruleset must match the version of the Questionnaire, since the questions in different versions of the questionnaire may have changed. So for these kinds of decision support requests, the data version number must be specified.
-
-The wanted version is specified in the CDS hook call in the `context.dataVersion` field. See the [CDS hooks page](cds-hooks.md) for more info.
-
+1. **The overall software version**. Changes with new releases of the software. (Version format: semver)
+2. **The clinical data version**. All internal data in EBMeDS is versioned using one version number. This includes the rulesets, drug data, translations etc. (Version format: semver)
+3. **The API versions**: At the moment EBMeDS supports XML and FHIR STU3 (JSON). These APIs are versioned separately. Newer software versions will support old interfaces for as long as technically feasible. (Version format: semver for XML, whole integers for FHIR)
+4. **Distributed artifact versions**. Some artifacts are distributed to customers so they can be potentially used outside of EBMeDS, for example FHIR Questionnaires. These follow their own versioning scheme that is mappable to the clinical data version scheme if required. (Version format: whole integers)
 
 ## Examples
 
