@@ -4,15 +4,34 @@
 
 ### HTTP/HTTPS
 
-By default, EBMeDS 2.0 serves its API over HTTP, with no encryption. It is, however, strongly recommended to use a reverse proxy like [nginx](https://nginx.org/en/) to provide SSL termination, i.e. serving the EBMeDS API over HTTPS to users. This is what is done e.g. in the EBMeDS cloud service [ebmedscloud.org](https://ebmedscloud.org).
+By default, EBMeDS 2.0 serves its API over HTTP, with no encryption. It is, however, strongly recommended to enable HTTPS or use a reverse proxy like [nginx](https://nginx.org/en/) to provide SSL termination. There are two potentially public service that is good to protect: `api-gateway` and `kibana`.
+
+#### Enabling native HTTPS for `api-gateway`
+
+HTTPS is enabled by setting the environment variable `HTTP_MODE` to `https` when launching the `api-gateway` container. In addition to this, the system administrator must obtain/generate a .key and .crt file and bind mount them onto the container so they may be read by the `api-gateway` service.
+
+Inside the container, the path to the aforementioned key and certificate files are by default `ssl/server.key` and `ssl/server.crt` but may be configured with the environment variables `HTTPS_KEY_PATH` and `HTTPS_CERT_PATH`, respectively. The path can be absolute, or (like in the default case) relative to the execution directory.
+
+As an example, when starting the `api-gateway` service, it can be done like this:
+
+```bash
+# bind mount the .key and .crt files to match the default container-internal ssl/server.* path
+docker run -d -it --name api-gateway -e HTTP_MODE=https -v path/to/generated.key:ssl/server.key:ro -v path/to/generated.crt:ssl/server.crt:ro api-gateway:latest
+```
+
+Note that if `api-gateway` is clustered onto several nodes, the files must be present on each server, either copied or shared over a network file system.
+
+#### Enabling native HTTPS for `kibana`
+
+It is not recommended to open up the log viewing UI `kibana` for public use due to data sensitivity concerns. In any case, however Kibana is run, it is usually a good idea to encrypt the traffic. Kibana is an open source project with flexible configuration options, SSL being one of them. SSL configuration ([](https://www.elastic.co/guide/en/kibana/5.6/production.html#enabling-ssl)) is done similarly to `api-gateway`, i.e. SSL is turned on and .key and .crt files are provided to the service. In this case, it is not done by environment variables but the Kibana configuration file. In the `ebmeds-docker` package, this is found in `kibana/config/kibana.yml`.
 
 ### Authentication (partially implemented)
 
 EBMeDS 2.0 handles authentication by a HTTP bearer token. This token must be included in the header of all requests to the service. EBMeDS can be configured to:
 
-* Accept all traffic, without a token.
-* Authenticate traffic using a single, global token.
-* (**To be implemented**) Authenticate traffic using a multitenancy approach, where each user has his own token. This also enables per-user configuration of the response.
+1. Accept all traffic, without a token.
+2. Authenticate traffic using a single, global token.
+3. (**To be implemented**) Authenticate traffic using a multitenancy approach, where each user has his own token. This also enables per-user configuration of the response.
 
 ## Patient data security and liability
 
