@@ -19,4 +19,6 @@ pages:
   # - API:
   #   - FHIR STU3: api/fhir-stu3.md
   #   - XML: api/xml.md
-theme_dir: cinder
+theme:
+  name: null
+  custom_dir: 'cinder'
