@@ -19,4 +19,4 @@ pages:
   # - API:
   #   - FHIR STU3: api/fhir-stu3.md
   #   - XML: api/xml.md
-#theme: readthedocs
+theme_dir: cinder
