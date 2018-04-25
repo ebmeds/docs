@@ -15,7 +15,9 @@ This hook is intended for the self-care context, where an individual (either by 
 * Request
     * [SelfCareQuestionnaireResponse](resources.md#selfcarequestionnaireresponse) (profile of QuestionnaireResponse)
 * Response
-    * SelfCareActivityDefinition (profile of ActivityDefinition)
+    * SelfCareActivityDefinition
+    * SelfCareObservation (optional)
+    * SelfCareRiskAssessment (optional)
 
 ### Versioning info
 
