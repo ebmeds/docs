@@ -16,3 +16,8 @@ EBMeDS talks two different protocols, JSON-formatted FHIR STU3, and a native XML
 
 * [Get started with FHIR](api/fhir/getting-started.md)
 * [Get started with XML](api/xml/getting-started.md)
+
+# Other resources
+
+* [EBMeDS script descriptions](http://www.ebmeds.org/web/guest/scripts)
+* [Duodecim's FHIR resources](https://simplifier.net/DuodecimCDS)

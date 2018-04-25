@@ -396,7 +396,13 @@ Below is an example of the two kinds of SelfCareActivityDefinitions (one describ
           },
           "topic": [
             {
-              "text": "Oireesi voivat johtua virtsatietulehduksesta, joka voi olla munuaistasoinen. Hakeudu päivystysvastaanotolle."
+              "text": "Oireesi voivat johtua virtsatietulehduksesta, joka voi olla munuaistasoinen. Hakeudu päivystysvastaanotolle.",
+              "coding": [
+                {
+                  "system": "https://duodecim.fi/fhir/stu3/CodeSystem/reminder-id",
+                  "code": "46bea5c0-c18e-4e78-a20c-06974bae60f7",
+                }
+              ]
             }
           ]
         }
@@ -417,9 +423,87 @@ And the fields are described as follows.
         * `display` (string): Human-readable description of the action.
 * `topic` (array, **optional**):
     * `text` (markdown string): The reminder text itself. May contain http links and text with light styling.
+    * `coding.code` (UUID): The unique ID of this particular reminder message.
+    * `coding.system`: Always `https://duodecim.fi/fhir/stu3/CodeSystem/reminder-id`.
 * `participant` (array of objects): A list of participants and their roles. In practice there is only ever one entry in this list. Each object contains the following field:
     * `type` (string): one of `patient`, `practitioner` or `related-person`. Only `patient` is in practical use at the moment.
 * `copyright` (string): A standard copyright notice.
+
+## SelfCareObservation
+
+*Inherits from*: [Observation](https://www.hl7.org/fhir/observation.html)
+
+*FHIR profile*: [SelfCareObservation](https://simplifier.net/DuodecimCDS/SelfCareObservation/)
+
+A very simple resource describing some new observation made about the patient from the basis of his or her patient data.
+
+### Example
+
+```
+{
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "https://duodecim.fi/fhir/stu3/CodeSystem/custom-observations",
+        "code": "potential-extra-years"
+      }
+    ]
+  },
+  "effectiveDateTime": "2018-04-25T11:13:56.894Z",
+  "valueQuantity": {
+    "unit": "a",
+    "value": 5
+  }
+}
+```
+
+And the fields are the following:
+
+* `code.coding`: The code system and coding describing the concept.
+* `effectiveDateTime` (date string): When this observation was created.
+* `valueQuantity` or `valueString`: The actual value, either as a number with a unit (Quantity) or as a string.
+
+## SelfCareRiskAssessment
+
+*Inherits from*: [RiskAssessment](https://www.hl7.org/fhir/riskassessment.html)
+
+*FHIR profile*: [SelfCareRiskAssessment](https://simplifier.net/DuodecimCDS/SelfCareRiskAssessment/)
+
+A resource describing some newly calculated risk regarding the patient, from the basis of his or her patient data. The risk is always associated with a certain outcome (with a diagnosis code or similar), and the age range in years for which this risk is applicable for this particular patient. The risk probability is always given as a decimal between 0 and 1.
+
+### Example
+
+```
+{
+  "status": "final",
+  "prediction": [
+    "outcome": {
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "414545008"
+      }]
+    },
+    "probabilityDecimal": 0.40,
+    "whenRange": {
+      "low": {
+        "value": 52,
+        "unit": "a"
+      },
+      "high": {
+        "value": 62,
+        "unit": "a"
+      }
+    }
+  ]
+}
+```
+
+And the fields are the following:
+
+* `prediction.outcome`: The code system and coding describing the outcome that may occur.
+* `prediction.probabilityDecimal` (decimal between 0 and 1): The probability of the outcome occurring.
+* `whenRange`: The patient's age range for which this risk has been calculated.
 
 ## Resources for general CDS
 

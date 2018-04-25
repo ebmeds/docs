@@ -284,7 +284,13 @@ Note that old Questionnaire versions will not be supported indefinitely, and it 
           },
           "topic": [
             {
-              "text": "Oireesi voivat johtua virtsatietulehduksesta, joka voi olla munuaistasoinen. Hakeudu päivystysvastaanotolle."
+              "text": "Oireesi voivat johtua virtsatietulehduksesta, joka voi olla munuaistasoinen. Hakeudu päivystysvastaanotolle.",
+              "coding": [
+                {
+                  "system": "https://duodecim.fi/fhir/stu3/CodeSystem/reminder-id",
+                  "code": "46bea5c0-c18e-4e78-a20c-06974bae60f7",
+                }
+              ]
             }
           ]
         }

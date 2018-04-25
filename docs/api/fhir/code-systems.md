@@ -46,7 +46,7 @@ And the service codings used (at the moment) are, in Finnish:
 
 ## FHIR resource-specific code systems
 
-Some code systems are specific to certain resources. They are listed below.
+Some code systems are specific to certain resources. They are listed below. The CodeSystem resources can be found at [](https://simplifier.net/DuodecimCDS).
 
 ### Questionnaire
 
@@ -65,3 +65,8 @@ In the ODA project, some ODA specific code systems are used:
     * `read-reminder` (normal priority)
     * `read-prompt` (medium priority)
     * `read-alert` (high priority)
+
+### Observation
+* `https://duodecim.fi/fhir/stu3/CodeSystem/custom-observations`: Some observations are not mappable to international codes and must therefore be given *some* code. This is the codesystem for that
+    * `expected-lifetime`: The expected age in years a patient is expected to live to.
+    * `potential-extra-years`: The increase in lifespan if the patient starts living according to healthy lifestyle recommendations.
