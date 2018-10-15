@@ -1,0 +1,1788 @@
+<ProcessDocument xmlns="urn:epic-com:Common.2013.Services">
+    <Document>
+        <ClinicalDocument xmlns="urn:hl7-org:v3">
+            <realmCode code="FI"/>
+            <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+            <templateId root="1.2.840.114350.1.72.1.51693"/>
+            <templateId root="2.16.840.1.113883.10.20.22.1.1"/>
+            <templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01"/>
+            <id assigningAuthorityName="EPC" extension="eb886716-b0cd-11e8-a947-00505680cc24" root="1.2.840.114350.1.13.491.3.7.1.1"/>
+            <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of Episode Note"/>
+            <title>Decision Support Request, Brief</title>
+            <effectiveTime value="20180905083830+0300"/>
+            <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
+            <languageCode code="fi-FI"/>
+            <recordTarget>
+                <patientRole>
+                    <id extension="APO3601500" root="1.2.840.114350.1.13.491.3.7.3.688884.100"/>
+                    <addr nullFlavor="UNK"/>
+                    <telecom nullFlavor="UNK"/>
+                    <patient>
+                        <name use="L">
+                            <given>Scriptiv</given>
+                            <family>Äläkoskeduodecim</family>
+                        </name>
+                        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGenderCode" displayName="nainen"/>
+                        <birthTime value="19721224"/>
+                        <sdtc:deceasedInd value="false" xmlns:sdtc="urn:hl7-org:sdtc"/>
+                        <maritalStatusCode nullFlavor="UNK"/>
+                        <raceCode nullFlavor="UNK"/>
+                        <ethnicGroupCode nullFlavor="UNK"/>
+                        <languageCommunication>
+                            <languageCode nullFlavor="UNK"/>
+                        </languageCommunication>
+                    </patient>
+                    <providerOrganization>
+                        <id extension="101600" root="1.2.840.114350.1.13.491.3.7.2.688879"/>
+                        <name>Apotti TST</name>
+                        <telecom nullFlavor="NA"/>
+                        <addr>
+                            <streetAddressLine nullFlavor="UNK"/>
+                            <city nullFlavor="UNK"/>
+                            <state nullFlavor="UNK"/>
+                            <postalCode nullFlavor="UNK"/>
+                        </addr>
+                    </providerOrganization>
+                </patientRole>
+            </recordTarget>
+            <author>
+                <time value="20180905083830+0300"/>
+                <assignedAuthor>
+                    <id extension="8.4" root="1.2.840.114350.1.1"/>
+                    <addr nullFlavor="NA"/>
+                    <telecom nullFlavor="NA"/>
+                    <assignedAuthoringDevice>
+                        <manufacturerModelName>Epic - Version 8.4</manufacturerModelName>
+                        <softwareName>Epic - Version 8.4</softwareName>
+                    </assignedAuthoringDevice>
+                    <representedOrganization>
+                        <id extension="101600" root="1.2.840.114350.1.13.491.3.7.2.688879"/>
+                        <name>Apotti TST</name>
+                        <telecom nullFlavor="NA"/>
+                        <addr>
+                            <streetAddressLine nullFlavor="UNK"/>
+                            <city nullFlavor="UNK"/>
+                            <state nullFlavor="UNK"/>
+                            <postalCode nullFlavor="UNK"/>
+                        </addr>
+                    </representedOrganization>
+                </assignedAuthor>
+            </author>
+            <custodian>
+                <assignedCustodian>
+                    <representedCustodianOrganization>
+                        <id extension="101600" root="1.2.840.114350.1.13.491.3.7.2.688879"/>
+                        <name>Apotti TST</name>
+                        <telecom nullFlavor="NA"/>
+                        <addr>
+                            <streetAddressLine nullFlavor="UNK"/>
+                            <city nullFlavor="UNK"/>
+                            <state nullFlavor="UNK"/>
+                            <postalCode nullFlavor="UNK"/>
+                        </addr>
+                    </representedCustodianOrganization>
+                </assignedCustodian>
+            </custodian>
+            <documentationOf typeCode="DOC">
+                <serviceEvent classCode="PCPR">
+                    <effectiveTime>
+                        <low value="20180905"/>
+                        <high value="20180905"/>
+                    </effectiveTime>
+                    <performer typeCode="PRF">
+                        <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="ParticipationFunction" displayName="Primary Care Provider">
+                            <originalText>Primary Care Provider</originalText>
+                        </functionCode>
+                        <time>
+                            <low nullFlavor="NI"/>
+                            <high nullFlavor="PINF"/>
+                        </time>
+                        <assignedEntity nullFlavor="NI">
+                            <id nullFlavor="UNK"/>
+                            <addr use="WP">
+                                <streetAddressLine nullFlavor="UNK"/>
+                                <city nullFlavor="UNK"/>
+                                <state nullFlavor="UNK"/>
+                                <postalCode nullFlavor="UNK"/>
+                            </addr>
+                            <telecom nullFlavor="NA"/>
+                            <assignedPerson nullFlavor="NA">
+                                <name nullFlavor="NA"/>
+                            </assignedPerson>
+                        </assignedEntity>
+                    </performer>
+                </serviceEvent>
+            </documentationOf>
+            <componentOf>
+                <encompassingEncounter>
+                    <id extension="561346" root="1.2.840.114350.1.13.491.3.7.3.698084.8"/>
+                    <code code="AMB" codeSystem="2.16.840.1.113883.5.4" displayName="Ambulatory">
+                        <originalText>Varfariinihoito</originalText>
+                    </code>
+                    <effectiveTime>
+                        <low value="20180905"/>
+                        <high value="20180905"/>
+                    </effectiveTime>
+                    <encounterParticipant typeCode="ATND">
+                        <time value="20180905"/>
+                        <assignedEntity>
+                            <id nullFlavor="UNK"/>
+                            <code nullFlavor="UNK">
+                                <originalText>TK-yleislääketiede</originalText>
+                            </code>
+                            <addr use="WP">
+                                <streetAddressLine>123 Anywhere Street</streetAddressLine>
+                                <postalCode>53711</postalCode>
+                                <city>MADISON</city>
+                                <state>WI</state>
+                            </addr>
+                            <telecom use="WP" value="tel:+358-55-555-55555"/>
+                            <assignedPerson>
+                                <name>
+                                    <given>Lääkäri</given>
+                                    <family>Perusterveydenhuolto</family>
+                                    <suffix qualifier="AC">lääkäri</suffix>
+                                </name>
+                            </assignedPerson>
+                        </assignedEntity>
+                    </encounterParticipant>
+                    <location>
+                        <healthCareFacility>
+                            <id extension="1100001038" root="1.2.840.114350.1.13.491.3.7.2.686980"/>
+                            <code nullFlavor="UNK">
+                                <originalText>Avosairaanhoito</originalText>
+                            </code>
+                            <location>
+                                <name>Tikkurilan terveysasema, 1-tiimi, Vantaan sosiaali- ja terveydenhuolto</name>
+                                <addr>
+                                    <streetAddressLine>Kielotie 11</streetAddressLine>
+                                    <postalCode>01300</postalCode>
+                                    <city>Vantaa</city>
+                                    <state nullFlavor="UNK"/>
+                                </addr>
+                            </location>
+                            <serviceProviderOrganization>
+                                <id extension="1100001" root="1.2.840.114350.1.13.491.3.7.2.696570"/>
+                                <name>Tikkurilan terveysasema</name>
+                                <addr>
+                                    <streetAddressLine>Kielotie 11</streetAddressLine>
+                                    <city>Vantaa</city>
+                                    <state nullFlavor="UNK"/>
+                                    <postalCode nullFlavor="UNK"/>
+                                    <country nullFlavor="UNK"/>
+                                </addr>
+                                <asOrganizationPartOf>
+                                    <wholeOrganization>
+                                        <name>Apotti TST</name>
+                                        <addr nullFlavor="NA"/>
+                                    </wholeOrganization>
+                                </asOrganizationPartOf>
+                            </serviceProviderOrganization>
+                        </healthCareFacility>
+                    </location>
+                </encompassingEncounter>
+            </componentOf>
+            <component>
+                <structuredBody>
+                    <component>
+                        <section nullFlavor="NI">
+                            <templateId root="2.16.840.1.113883.10.20.22.2.6"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.6" extension="2015-08-01"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.6.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.6.1" extension="2015-08-01"/>
+                            <id root="EB8A30DC-B0CD-11E8-A947-00505680CC24"/>
+                            <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies and adverse reactions Document"/>
+                            <title>Allergiat</title>
+                            <text>
+                                <content ID="nof2">Ei tallennettu</content>
+                                <footnote ID="subTitle1" styleCode="xSectionSubTitle xHidden">alkaen tästä palvelukontaktista</footnote>
+                            </text>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.5"/>
+                            <id root="EB8AA4D6-B0CD-11E8-A947-00505680CC24"/>
+                            <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list - Reported"/>
+                            <title>Tarpeet/diagnoosit</title>
+                            <text>
+                                <table>
+                                    <colgroup>
+                                        <col width="75%"/>
+                                        <col width="25%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Aktiiviset tarpeet/diagnoosit</th>
+                                            <th>Huomioinnin päivämäärä</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ID="problem4" styleCode="normRow">
+                                            <td ID="problem4name">Eteisvärinä tai eteislepatus</td>
+                                            <td>21.08.2018</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <footnote ID="subTitle3" styleCode="xSectionSubTitle xHidden">alkaen tästä palvelukontaktista</footnote>
+                            </text>
+                            <entry>
+                                <act classCode="ACT" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.3"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
+                                    <id extension="57038-concern" root="1.2.840.114350.1.13.491.3.7.2.768076"/>
+                                    <code code="CONC" codeSystem="2.16.840.1.113883.5.6" codeSystemName="HL7ActClass"/>
+                                    <statusCode code="active"/>
+                                    <effectiveTime>
+                                        <low value="20180821"/>
+                                    </effectiveTime>
+                                    <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+                                            <id extension="57038" root="1.2.840.114350.1.13.491.3.7.2.768076"/>
+                                            <code code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                                                <translation code="75323-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Condition"/>
+                                            </code>
+                                            <text>
+                                                <reference value="#problem4name"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime>
+                                                <low value="20180821"/>
+                                            </effectiveTime>
+                                            <value code="I48" codeSystem="1.2.246.537.6.1.1999" codeSystemName="ICD10" xsi:type="CD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                                <originalText>
+                                                    <reference value="#problem4name"/>
+                                                </originalText>
+                                            </value>
+                                            <author>
+                                                <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+                                                <time value="20180821102348+0000"/>
+                                                <assignedAuthor>
+                                                    <id nullFlavor="UNK"/>
+                                                    <addr>
+                                                        <streetAddressLine>123 Anywhere Street</streetAddressLine>
+                                                        <postalCode>53711</postalCode>
+                                                        <city>MADISON</city>
+                                                        <state>WI</state>
+                                                    </addr>
+                                                    <telecom use="WP" value="tel:+358-55-555-55555"/>
+                                                    <assignedPerson>
+                                                        <name>
+                                                            <family>Perusterveydenhuolto</family>
+                                                            <given>Lääkäri</given>
+                                                            <suffix qualifier="AC">lääkäri</suffix>
+                                                        </name>
+                                                    </assignedPerson>
+                                                    <representedOrganization>
+                                                        <id extension="101600" root="1.2.840.114350.1.13.491.3.7.2.688879"/>
+                                                        <name>Apotti TST</name>
+                                                        <telecom nullFlavor="UNK"/>
+                                                        <addr nullFlavor="UNK"/>
+                                                    </representedOrganization>
+                                                </assignedAuthor>
+                                            </author>
+                                            <entryRelationship typeCode="REFR">
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.6"/>
+                                                    <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime>
+                                                        <low value="20180821"/>
+                                                    </effectiveTime>
+                                                    <value code="55561003" codeSystem="2.16.840.1.113883.6.96" xsi:type="CD" displayName="Active" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                                </observation>
+                                            </entryRelationship>
+                                        </observation>
+                                    </entryRelationship>
+                                </act>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.17"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.17" extension="2015-08-01"/>
+                            <code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Social history Narrative"/>
+                            <title>Elintapahistoria</title>
+                            <text>
+                                <table>
+                                    <colgroup>
+                                        <col width="25%" span="2"/>
+                                        <col width="13%"/>
+                                        <col width="12%"/>
+                                        <col width="25%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Tupakointi</th>
+                                            <th>Tyypit</th>
+                                            <th>Askia/päivä</th>
+                                            <th>Vuotta</th>
+                                            <th>Päivämäärä</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Ei koskaan arvioitu</td>
+                                            <td/>
+                                            <td/>
+                                            <td/>
+                                            <td/>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <colgroup>
+                                        <col width="25%"/>
+                                        <col width="75%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Syntymässä määritetty sukupuoli</th>
+                                            <th>Kirjauspäivä</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ID="BirthSex11">
+                                            <td ID="BirthSex11Value">Ei tallennettu</td>
+                                            <td/>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <colgroup>
+                                        <col width="25%" span="2"/>
+                                        <col width="50%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Työn alkamispäivä</th>
+                                            <th>Ammatti</th>
+                                            <th>Ala</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Ei tallennettu</td>
+                                            <td ID="sochist12">Ei tallennettu</td>
+                                            <td ID="sochist13">Ei tallennettu</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <colgroup>
+                                        <col width="50%"/>
+                                        <col width="25%" span="2"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Matkustushistoria</th>
+                                            <th>Matkan alku</th>
+                                            <th>Matkan loppu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Viimeaikaista matkustushistoriaa ei ole käytettävissä.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <footnote ID="subTitle9" styleCode="xSectionSubTitle xHidden">alkaen tästä palvelukontaktista</footnote>
+                            </text>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.78"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.78" extension="2014-06-09"/>
+                                    <id extension="Z15087^^72166-2" root="1.2.840.114350.1.13.491.3.7.1.1040.1"/>
+                                    <code code="72166-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Tobacco smoking status NHIS"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime nullFlavor="UNK"/>
+                                    <value code="266927001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" xsi:type="CD" displayName="Unknown if ever smoked" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.200" extension="2016-06-01"/>
+                                    <code code="76689-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Sex Assigned At Birth"/>
+                                    <text>
+                                        <reference value="#BirthSex11"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <value codeSystem="2.16.840.1.113883.5.1" xsi:type="CD" nullFlavor="UNK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                        <originalText>
+                                            <reference value="#BirthSex11Value"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.3"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.3" extension="2015-08-01"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.3.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.3.1" extension="2015-08-01"/>
+                            <templateId root="1.2.840.114350.1.72.3.2"/>
+                            <templateId root="1.2.840.114350.1.72.3.2" extension="2017-04-01"/>
+                            <id root="EB970BA4-B0CD-11E8-A947-00505680CC24"/>
+                            <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests/laboratory data Narrative"/>
+                            <title>Tulokset</title>
+                            <text>
+                                <list styleCode="TOC">
+                                    <item ID="Result1253391">
+                                        <caption>INR (vieritesti) (05.09.2018 08:37 EEST)</caption>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                                <col width="30%"/>
+                                                <col width="25%"/>
+                                                <col width="20%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Komponentti</th>
+                                                    <th>Arvo</th>
+                                                    <th>Viitealue</th>
+                                                    <th>Suoritettu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ID="Result1253391Comp1">
+                                                    <td ID="Result1253391Comp1Name">INR, VIERI</td>
+                                                    <td>
+                                                        <content styleCode="flagData">1,9</content>
+                                                        <content styleCode="flagData">(A)</content>
+                                                    </td>
+                                                    <td>2 - 3</td>
+                                                    <td/>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Näyte</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td ID="Result1253391Specimen">Kapillaariveri - Kapillaariveri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </item>
+                                    <item ID="Result1253388">
+                                        <caption>INR (vieritesti) (21.08.2018)</caption>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                                <col width="30%"/>
+                                                <col width="25%"/>
+                                                <col width="20%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Komponentti</th>
+                                                    <th>Arvo</th>
+                                                    <th>Viitealue</th>
+                                                    <th>Suoritettu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ID="Result1253388Comp1">
+                                                    <td ID="Result1253388Comp1Name">INR, VIERI</td>
+                                                    <td>3,5</td>
+                                                    <td>2 - 3</td>
+                                                    <td/>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Näyte</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td ID="Result1253388Specimen">Kapillaariveri - Kapillaariveri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </item>
+                                    <item ID="Result1253386">
+                                        <caption>INR (vieritesti) (21.08.2018)</caption>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                                <col width="30%"/>
+                                                <col width="25%"/>
+                                                <col width="20%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Komponentti</th>
+                                                    <th>Arvo</th>
+                                                    <th>Viitealue</th>
+                                                    <th>Suoritettu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ID="Result1253386Comp1">
+                                                    <td ID="Result1253386Comp1Name">INR, VIERI</td>
+                                                    <td>2,5</td>
+                                                    <td>2 - 3</td>
+                                                    <td/>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Näyte</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td ID="Result1253386Specimen">Kapillaariveri - Kapillaariveri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </item>
+                                    <item ID="Result1253389">
+                                        <caption>INR (vieritesti) (02.07.2018)</caption>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                                <col width="30%"/>
+                                                <col width="25%"/>
+                                                <col width="20%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Komponentti</th>
+                                                    <th>Arvo</th>
+                                                    <th>Viitealue</th>
+                                                    <th>Suoritettu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ID="Result1253389Comp1">
+                                                    <td ID="Result1253389Comp1Name">INR, VIERI</td>
+                                                    <td>
+                                                        <content styleCode="flagData">1,8</content>
+                                                        <content styleCode="flagData">(A)</content>
+                                                    </td>
+                                                    <td>2 - 3</td>
+                                                    <td/>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Näyte</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td ID="Result1253389Specimen">Kapillaariveri - Kapillaariveri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </item>
+                                    <item ID="Result1253390">
+                                        <caption>INR (vieritesti) (21.06.2018)</caption>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                                <col width="30%"/>
+                                                <col width="25%"/>
+                                                <col width="20%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Komponentti</th>
+                                                    <th>Arvo</th>
+                                                    <th>Viitealue</th>
+                                                    <th>Suoritettu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ID="Result1253390Comp1">
+                                                    <td ID="Result1253390Comp1Name">INR, VIERI</td>
+                                                    <td>3,9</td>
+                                                    <td>2 - 3</td>
+                                                    <td/>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table>
+                                            <colgroup>
+                                                <col width="25%"/>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Näyte</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td ID="Result1253390Specimen">Kapillaariveri - Kapillaariveri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </item>
+                                </list>
+                                <footnote ID="subTitle17" styleCode="xSectionSubTitle xHidden">07.06.2018 – 05.09.2018</footnote>
+                            </text>
+                            <entry typeCode="DRIV">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
+                                    <id extension="1253386" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                    <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                        <originalText>INR (vieritesti)</originalText>
+                                        <translation code="1620" codeSystem="1.2.246.10.15675350.6.3.2006" codeSystemName="HUSlab paikallinen laboratorionimikkeistö" displayName="vieri inr"/>
+                                        <translation code="1620" codeSystem="1.2.840.114350.1.13.491.3.7.2.696580" codeSystemName="Epic.EAP.ID" displayName="INR (vieritesti)"/>
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20180821"/>
+                                        <high value="20180821"/>
+                                    </effectiveTime>
+                                    <specimen typeCode="SPC">
+                                        <specimenRole classCode="SPEC">
+                                            <id extension="1253386" root="1.2.840.114350.1.13.491.3.7.7.798268.300"/>
+                                            <specimenPlayingEntity>
+                                                <code code="133" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.300" codeSystemName="Epic.Specimen">
+                                                    <originalText>Kapillaariveri</originalText>
+                                                    <translation code="CB" codeSystem="1.2.246.537.6.17.2004" codeSystemName="Kuntaliitto - Laboratoriotutkimuksen systeemilyhenne" displayName="kapillaariveri"/>
+                                                </code>
+                                            </specimenPlayingEntity>
+                                        </specimenRole>
+                                    </specimen>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <id extension="1253386.1" root="1.2.840.114350.1.13.491.3.7.6.798268.2000"/>
+                                            <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                                <originalText>INR, VIERI
+                                                    <reference value="#Result1253386Comp1Name"/>
+                                                </originalText>
+                                                <translation code="6789" codeSystem="1.2.840.114350.1.13.491.3.7.2.768282" codeSystemName="Epic.LRR.ID" displayName="INR, VIERI"/>
+                                                <translation nullFlavor="UNK"/>
+                                            </code>
+                                            <text>
+                                                <reference value="#Result1253386Comp1"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180821"/>
+                                            <value xsi:type="REAL" value="2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                            <targetSiteCode code="314" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.325" codeSystemName="Epic.Specimen">
+                                                <originalText>Kapillaariveri</originalText>
+                                            </targetSiteCode>
+                                            <referenceRange>
+                                                <observationRange>
+                                                    <text>2 - 3</text>
+                                                    <value xsi:type="IVL_PQ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                                        <low nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="2">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </low>
+                                                        <high nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="3">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </high>
+                                                    </value>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observationRange>
+                                            </referenceRange>
+                                        </observation>
+                                    </component>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <templateId root="1.2.840.114350.1.72.3.4"/>
+                                            <id extension="1253386" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference nullFlavor="UNK"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180821"/>
+                                            <value code="16" codeSystem="1.2.840.114350.1.72.1.5007" codeSystemName="Epic.Result.Type" xsi:type="CD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                        </observation>
+                                    </component>
+                                    <component typeCode="COMP">
+                                        <encounter classCode="ENC" moodCode="EVN">
+                                            <id extension="552392" root="1.2.840.114350.1.13.491.3.7.3.698084.8"/>
+                                            <code code="1001" codeSystem="1.2.840.114350.1.13.491.3.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Varfariinihoito"/>
+                                            <effectiveTime value="20180821"/>
+                                        </encounter>
+                                    </component>
+                                </organizer>
+                            </entry>
+                            <entry typeCode="DRIV">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
+                                    <id extension="1253388" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                    <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                        <originalText>INR (vieritesti)</originalText>
+                                        <translation code="1620" codeSystem="1.2.246.10.15675350.6.3.2006" codeSystemName="HUSlab paikallinen laboratorionimikkeistö" displayName="vieri inr"/>
+                                        <translation code="1620" codeSystem="1.2.840.114350.1.13.491.3.7.2.696580" codeSystemName="Epic.EAP.ID" displayName="INR (vieritesti)"/>
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20180821"/>
+                                        <high value="20180821"/>
+                                    </effectiveTime>
+                                    <specimen typeCode="SPC">
+                                        <specimenRole classCode="SPEC">
+                                            <id extension="1253388" root="1.2.840.114350.1.13.491.3.7.7.798268.300"/>
+                                            <specimenPlayingEntity>
+                                                <code code="133" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.300" codeSystemName="Epic.Specimen">
+                                                    <originalText>Kapillaariveri</originalText>
+                                                    <translation code="CB" codeSystem="1.2.246.537.6.17.2004" codeSystemName="Kuntaliitto - Laboratoriotutkimuksen systeemilyhenne" displayName="kapillaariveri"/>
+                                                </code>
+                                            </specimenPlayingEntity>
+                                        </specimenRole>
+                                    </specimen>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <id extension="1253388.1" root="1.2.840.114350.1.13.491.3.7.6.798268.2000"/>
+                                            <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                                <originalText>INR, VIERI
+                                                    <reference value="#Result1253388Comp1Name"/>
+                                                </originalText>
+                                                <translation code="6789" codeSystem="1.2.840.114350.1.13.491.3.7.2.768282" codeSystemName="Epic.LRR.ID" displayName="INR, VIERI"/>
+                                                <translation nullFlavor="UNK"/>
+                                            </code>
+                                            <text>
+                                                <reference value="#Result1253388Comp1"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180821"/>
+                                            <value xsi:type="REAL" value="3.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                            <targetSiteCode code="314" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.325" codeSystemName="Epic.Specimen">
+                                                <originalText>Kapillaariveri</originalText>
+                                            </targetSiteCode>
+                                            <referenceRange>
+                                                <observationRange>
+                                                    <text>2 - 3</text>
+                                                    <value xsi:type="IVL_PQ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                                        <low nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="2">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </low>
+                                                        <high nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="3">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </high>
+                                                    </value>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observationRange>
+                                            </referenceRange>
+                                        </observation>
+                                    </component>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <templateId root="1.2.840.114350.1.72.3.4"/>
+                                            <id extension="1253388" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference nullFlavor="UNK"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180821"/>
+                                            <value code="16" codeSystem="1.2.840.114350.1.72.1.5007" codeSystemName="Epic.Result.Type" xsi:type="CD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                        </observation>
+                                    </component>
+                                    <component typeCode="COMP">
+                                        <encounter classCode="ENC" moodCode="EVN">
+                                            <id extension="552392" root="1.2.840.114350.1.13.491.3.7.3.698084.8"/>
+                                            <code code="1001" codeSystem="1.2.840.114350.1.13.491.3.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Varfariinihoito"/>
+                                            <effectiveTime value="20180821"/>
+                                        </encounter>
+                                    </component>
+                                </organizer>
+                            </entry>
+                            <entry typeCode="DRIV">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
+                                    <id extension="1253389" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                    <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                        <originalText>INR (vieritesti)</originalText>
+                                        <translation code="1620" codeSystem="1.2.246.10.15675350.6.3.2006" codeSystemName="HUSlab paikallinen laboratorionimikkeistö" displayName="vieri inr"/>
+                                        <translation code="1620" codeSystem="1.2.840.114350.1.13.491.3.7.2.696580" codeSystemName="Epic.EAP.ID" displayName="INR (vieritesti)"/>
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20180702"/>
+                                        <high value="20180702"/>
+                                    </effectiveTime>
+                                    <specimen typeCode="SPC">
+                                        <specimenRole classCode="SPEC">
+                                            <id extension="1253389" root="1.2.840.114350.1.13.491.3.7.7.798268.300"/>
+                                            <specimenPlayingEntity>
+                                                <code code="133" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.300" codeSystemName="Epic.Specimen">
+                                                    <originalText>Kapillaariveri</originalText>
+                                                    <translation code="CB" codeSystem="1.2.246.537.6.17.2004" codeSystemName="Kuntaliitto - Laboratoriotutkimuksen systeemilyhenne" displayName="kapillaariveri"/>
+                                                </code>
+                                            </specimenPlayingEntity>
+                                        </specimenRole>
+                                    </specimen>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <id extension="1253389.1" root="1.2.840.114350.1.13.491.3.7.6.798268.2000"/>
+                                            <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                                <originalText>INR, VIERI
+                                                    <reference value="#Result1253389Comp1Name"/>
+                                                </originalText>
+                                                <translation code="6789" codeSystem="1.2.840.114350.1.13.491.3.7.2.768282" codeSystemName="Epic.LRR.ID" displayName="INR, VIERI"/>
+                                                <translation nullFlavor="UNK"/>
+                                            </code>
+                                            <text>
+                                                <reference value="#Result1253389Comp1"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180702"/>
+                                            <value xsi:type="REAL" value="1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                            <interpretationCode code="A" codeSystem="2.16.840.1.113883.5.83">
+                                                <originalText>Abnormal</originalText>
+                                            </interpretationCode>
+                                            <targetSiteCode code="314" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.325" codeSystemName="Epic.Specimen">
+                                                <originalText>Kapillaariveri</originalText>
+                                            </targetSiteCode>
+                                            <referenceRange>
+                                                <observationRange>
+                                                    <text>2 - 3</text>
+                                                    <value xsi:type="IVL_PQ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                                        <low nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="2">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </low>
+                                                        <high nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="3">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </high>
+                                                    </value>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observationRange>
+                                            </referenceRange>
+                                        </observation>
+                                    </component>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <templateId root="1.2.840.114350.1.72.3.3"/>
+                                            <id extension="1253389" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <code code="56850-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                                                <originalText>Lab Interpretation</originalText>
+                                            </code>
+                                            <text>
+                                                <reference nullFlavor="UNK"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180702"/>
+                                            <value xsi:type="ST" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Poikkeava</value>
+                                        </observation>
+                                    </component>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <templateId root="1.2.840.114350.1.72.3.4"/>
+                                            <id extension="1253389" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference nullFlavor="UNK"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180702"/>
+                                            <value code="16" codeSystem="1.2.840.114350.1.72.1.5007" codeSystemName="Epic.Result.Type" xsi:type="CD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                        </observation>
+                                    </component>
+                                    <component typeCode="COMP">
+                                        <encounter classCode="ENC" moodCode="EVN">
+                                            <id extension="552392" root="1.2.840.114350.1.13.491.3.7.3.698084.8"/>
+                                            <code code="1001" codeSystem="1.2.840.114350.1.13.491.3.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Varfariinihoito"/>
+                                            <effectiveTime value="20180821"/>
+                                        </encounter>
+                                    </component>
+                                </organizer>
+                            </entry>
+                            <entry typeCode="DRIV">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
+                                    <id extension="1253390" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                    <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                        <originalText>INR (vieritesti)</originalText>
+                                        <translation code="1620" codeSystem="1.2.246.10.15675350.6.3.2006" codeSystemName="HUSlab paikallinen laboratorionimikkeistö" displayName="vieri inr"/>
+                                        <translation code="1620" codeSystem="1.2.840.114350.1.13.491.3.7.2.696580" codeSystemName="Epic.EAP.ID" displayName="INR (vieritesti)"/>
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20180621"/>
+                                        <high value="20180621"/>
+                                    </effectiveTime>
+                                    <specimen typeCode="SPC">
+                                        <specimenRole classCode="SPEC">
+                                            <id extension="1253390" root="1.2.840.114350.1.13.491.3.7.7.798268.300"/>
+                                            <specimenPlayingEntity>
+                                                <code code="133" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.300" codeSystemName="Epic.Specimen">
+                                                    <originalText>Kapillaariveri</originalText>
+                                                    <translation code="CB" codeSystem="1.2.246.537.6.17.2004" codeSystemName="Kuntaliitto - Laboratoriotutkimuksen systeemilyhenne" displayName="kapillaariveri"/>
+                                                </code>
+                                            </specimenPlayingEntity>
+                                        </specimenRole>
+                                    </specimen>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <id extension="1253390.1" root="1.2.840.114350.1.13.491.3.7.6.798268.2000"/>
+                                            <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                                <originalText>INR, VIERI
+                                                    <reference value="#Result1253390Comp1Name"/>
+                                                </originalText>
+                                                <translation code="6789" codeSystem="1.2.840.114350.1.13.491.3.7.2.768282" codeSystemName="Epic.LRR.ID" displayName="INR, VIERI"/>
+                                                <translation nullFlavor="UNK"/>
+                                            </code>
+                                            <text>
+                                                <reference value="#Result1253390Comp1"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180621"/>
+                                            <value xsi:type="REAL" value="3.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                            <targetSiteCode code="314" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.325" codeSystemName="Epic.Specimen">
+                                                <originalText>Kapillaariveri</originalText>
+                                            </targetSiteCode>
+                                            <referenceRange>
+                                                <observationRange>
+                                                    <text>2 - 3</text>
+                                                    <value xsi:type="IVL_PQ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                                        <low nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="2">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </low>
+                                                        <high nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="3">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </high>
+                                                    </value>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observationRange>
+                                            </referenceRange>
+                                        </observation>
+                                    </component>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <templateId root="1.2.840.114350.1.72.3.4"/>
+                                            <id extension="1253390" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference nullFlavor="UNK"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180621"/>
+                                            <value code="16" codeSystem="1.2.840.114350.1.72.1.5007" codeSystemName="Epic.Result.Type" xsi:type="CD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                        </observation>
+                                    </component>
+                                    <component typeCode="COMP">
+                                        <encounter classCode="ENC" moodCode="EVN">
+                                            <id extension="552392" root="1.2.840.114350.1.13.491.3.7.3.698084.8"/>
+                                            <code code="1001" codeSystem="1.2.840.114350.1.13.491.3.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Varfariinihoito"/>
+                                            <effectiveTime value="20180821"/>
+                                        </encounter>
+                                    </component>
+                                </organizer>
+                            </entry>
+                            <entry typeCode="DRIV">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
+                                    <id extension="1253391" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                    <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                        <originalText>INR (vieritesti)</originalText>
+                                        <translation code="1620" codeSystem="1.2.246.10.15675350.6.3.2006" codeSystemName="HUSlab paikallinen laboratorionimikkeistö" displayName="vieri inr"/>
+                                        <translation code="1620" codeSystem="1.2.840.114350.1.13.491.3.7.2.696580" codeSystemName="Epic.EAP.ID" displayName="INR (vieritesti)"/>
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20180905053700+0000"/>
+                                        <high value="20180905053700+0000"/>
+                                    </effectiveTime>
+                                    <specimen typeCode="SPC">
+                                        <specimenRole classCode="SPEC">
+                                            <id extension="1253391" root="1.2.840.114350.1.13.491.3.7.7.798268.300"/>
+                                            <specimenPlayingEntity>
+                                                <code code="133" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.300" codeSystemName="Epic.Specimen">
+                                                    <originalText>Kapillaariveri</originalText>
+                                                    <translation code="CB" codeSystem="1.2.246.537.6.17.2004" codeSystemName="Kuntaliitto - Laboratoriotutkimuksen systeemilyhenne" displayName="kapillaariveri"/>
+                                                </code>
+                                            </specimenPlayingEntity>
+                                        </specimenRole>
+                                    </specimen>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <id extension="1253391.1" root="1.2.840.114350.1.13.491.3.7.6.798268.2000"/>
+                                            <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="UNK">
+                                                <originalText>INR, VIERI
+                                                    <reference value="#Result1253391Comp1Name"/>
+                                                </originalText>
+                                                <translation code="6789" codeSystem="1.2.840.114350.1.13.491.3.7.2.768282" codeSystemName="Epic.LRR.ID" displayName="INR, VIERI"/>
+                                                <translation nullFlavor="UNK"/>
+                                            </code>
+                                            <text>
+                                                <reference value="#Result1253391Comp1"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180905053800+0000"/>
+                                            <value xsi:type="REAL" value="1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                            <interpretationCode code="A" codeSystem="2.16.840.1.113883.5.83">
+                                                <originalText>Abnormal</originalText>
+                                            </interpretationCode>
+                                            <targetSiteCode code="314" codeSystem="1.2.840.114350.1.13.491.3.7.4.798268.325" codeSystemName="Epic.Specimen">
+                                                <originalText>Kapillaariveri</originalText>
+                                            </targetSiteCode>
+                                            <referenceRange>
+                                                <observationRange>
+                                                    <text>2 - 3</text>
+                                                    <value xsi:type="IVL_PQ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                                        <low nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="2">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </low>
+                                                        <high nullFlavor="OTH">
+                                                            <translation nullFlavor="OTH" value="3">
+                                                                <originalText>
+                                                                    <reference nullFlavor="UNK"/>
+                                                                </originalText>
+                                                            </translation>
+                                                        </high>
+                                                    </value>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observationRange>
+                                            </referenceRange>
+                                        </observation>
+                                    </component>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <templateId root="1.2.840.114350.1.72.3.3"/>
+                                            <id extension="1253391" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <code code="56850-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                                                <originalText>Lab Interpretation</originalText>
+                                            </code>
+                                            <text>
+                                                <reference nullFlavor="UNK"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180905053800+0000"/>
+                                            <value xsi:type="ST" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Poikkeava</value>
+                                        </observation>
+                                    </component>
+                                    <component>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                                            <templateId root="1.2.840.114350.1.72.3.4"/>
+                                            <id extension="1253391" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference nullFlavor="UNK"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20180905053800+0000"/>
+                                            <value code="16" codeSystem="1.2.840.114350.1.72.1.5007" codeSystemName="Epic.Result.Type" xsi:type="CD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                        </observation>
+                                    </component>
+                                </organizer>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.1" extension="2014-06-09"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.1.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.1.1" extension="2014-06-09"/>
+                            <id root="EB999BC6-B0CD-11E8-A947-00505680CC24"/>
+                            <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Medication use Narrative"/>
+                            <title>Lääkkeet</title>
+                            <text>
+                                <table>
+                                    <colgroup>
+                                        <col width="25%" span="2"/>
+                                        <col width="13%"/>
+                                        <col width="12%"/>
+                                        <col width="8%" span="2"/>
+                                        <col width="9%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Lääkitys</th>
+                                            <th>Annosteluohje</th>
+                                            <th>Toimitettu</th>
+                                            <th>Uudistamiset</th>
+                                            <th>Alkamispäivä</th>
+                                            <th>Päättymispäivä</th>
+                                            <th>Tila</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ID="currx19">
+                                            <td>
+                                                <paragraph ID="med19">varfariini (MAREVAN) 3 mg tabletti</paragraph>
+                                            </td>
+                                            <td ID="sig19">3 mg suun kautta kerran vuorokaudessa aina samaan kellonaikaan. Erillisen ohjeen mukaan</td>
+                                            <td/>
+                                            <td>0</td>
+                                            <td/>
+                                            <td/>
+                                            <td>Aktiivinen</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <footnote ID="subTitle18" styleCode="xSectionSubTitle xHidden">alkaen tästä palvelukontaktista</footnote>
+                            </text>
+                            <entry>
+                                <substanceAdministration classCode="SBADM" moodCode="INT">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.16"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.16" extension="2014-06-09"/>
+                                    <id extension="1253385" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                    <text>
+                                        <reference value="#sig19"/>
+                                    </text>
+                                    <statusCode code="active"/>
+                                    <effectiveTime xsi:type="IVL_TS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                        <low nullFlavor="UNK"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="suun kautta"/>
+                                    <doseQuantity unit="mg" value="3"/>
+                                    <consumable typeCode="CSM">
+                                        <manufacturedProduct classCode="MANU">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.23"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09"/>
+                                            <manufacturedMaterial>
+                                                <code nullFlavor="OTH">
+                                                    <originalText>
+                                                        <reference value="#med19"/>
+                                                    </originalText>
+                                                    <translation code="486571" codeSystem="2.16.840.1.113883.6.69" codeSystemName="NDC" displayName="Varfariini Tabletti 3 Mg"/>
+                                                    <translation code="B01AA03" codeSystem="2.16.840.1.113883.6.73" codeSystemName="WHO ATC"/>
+                                                </code>
+                                            </manufacturedMaterial>
+                                        </manufacturedProduct>
+                                    </consumable>
+                                    <author>
+                                        <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+                                        <time value="20180821102413+0000"/>
+                                        <assignedAuthor>
+                                            <id nullFlavor="UNK"/>
+                                            <addr>
+                                                <streetAddressLine>123 Anywhere Street</streetAddressLine>
+                                                <postalCode>53711</postalCode>
+                                                <city>MADISON</city>
+                                                <state>WI</state>
+                                            </addr>
+                                            <telecom use="WP" value="tel:+358-55-555-55555"/>
+                                            <assignedPerson>
+                                                <name>
+                                                    <family>Perusterveydenhuolto</family>
+                                                    <given>Lääkäri</given>
+                                                    <suffix qualifier="AC">lääkäri</suffix>
+                                                </name>
+                                            </assignedPerson>
+                                            <representedOrganization>
+                                                <id extension="101600" root="1.2.840.114350.1.13.491.3.7.2.688879"/>
+                                                <name>Apotti TST</name>
+                                                <telecom nullFlavor="UNK"/>
+                                                <addr nullFlavor="UNK"/>
+                                            </representedOrganization>
+                                        </assignedAuthor>
+                                    </author>
+                                    <entryRelationship inversionInd="true" typeCode="SUBJ">
+                                        <act classCode="ACT" moodCode="INT">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.20" extension="2014-06-09"/>
+                                            <code code="311401005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                                            <text>
+                                                <reference value="#sig19"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <author>
+                                                <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+                                                <time value="20180821102413+0000"/>
+                                                <assignedAuthor>
+                                                    <id nullFlavor="UNK"/>
+                                                    <addr>
+                                                        <streetAddressLine>123 Anywhere Street</streetAddressLine>
+                                                        <postalCode>53711</postalCode>
+                                                        <city>MADISON</city>
+                                                        <state>WI</state>
+                                                    </addr>
+                                                    <telecom use="WP" value="tel:+358-55-555-55555"/>
+                                                    <assignedPerson>
+                                                        <name>
+                                                            <family>Perusterveydenhuolto</family>
+                                                            <given>Lääkäri</given>
+                                                            <suffix qualifier="AC">lääkäri</suffix>
+                                                        </name>
+                                                    </assignedPerson>
+                                                    <representedOrganization>
+                                                        <id extension="101600" root="1.2.840.114350.1.13.491.3.7.2.688879"/>
+                                                        <name>Apotti TST</name>
+                                                        <telecom nullFlavor="UNK"/>
+                                                        <addr nullFlavor="UNK"/>
+                                                    </representedOrganization>
+                                                </assignedAuthor>
+                                            </author>
+                                        </act>
+                                    </entryRelationship>
+                                    <entryRelationship typeCode="REFR">
+                                        <supply classCode="SPLY" moodCode="INT">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.17"/>
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.17" extension="2014-06-09"/>
+                                            <id extension="1253385" root="1.2.840.114350.1.13.491.3.7.2.798268"/>
+                                            <statusCode code="completed"/>
+                                            <repeatNumber value="1"/>
+                                            <product>
+                                                <manufacturedProduct classCode="MANU">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.23"/>
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.23" extension="2014-06-09"/>
+                                                    <manufacturedMaterial>
+                                                        <code nullFlavor="OTH">
+                                                            <originalText>
+                                                                <reference value="#med19"/>
+                                                            </originalText>
+                                                            <translation code="486571" codeSystem="2.16.840.1.113883.6.69" codeSystemName="NDC" displayName="Varfariini Tabletti 3 Mg"/>
+                                                            <translation code="B01AA03" codeSystem="2.16.840.1.113883.6.73" codeSystemName="WHO ATC"/>
+                                                        </code>
+                                                    </manufacturedMaterial>
+                                                </manufacturedProduct>
+                                            </product>
+                                        </supply>
+                                    </entryRelationship>
+                                    <entryRelationship typeCode="REFR">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.47"/>
+                                            <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                                            <statusCode code="completed"/>
+                                            <value code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" xsi:type="CE" displayName="Active" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                        </observation>
+                                    </entryRelationship>
+                                    <entryRelationship typeCode="COMP">
+                                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.147"/>
+                                            <code code="76662-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Medication Instructions"/>
+                                            <text>
+                                                <reference value="#sig19"/>
+                                            </text>
+                                            <consumable>
+                                                <manufacturedProduct>
+                                                    <manufacturedLabeledDrug nullFlavor="NA"/>
+                                                </manufacturedProduct>
+                                            </consumable>
+                                        </substanceAdministration>
+                                    </entryRelationship>
+                                    <entryRelationship inversionInd="true" typeCode="SUBJ">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="FREQUENCY"/>
+                                            <value xsi:type="ST" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">kerran päivässä varfariinille</value>
+                                        </observation>
+                                    </entryRelationship>
+                                </substanceAdministration>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.7"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.7" extension="2014-06-09"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.7.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.7.1" extension="2014-06-09"/>
+                            <id root="EB9C6C66-B0CD-11E8-A947-00505680CC24"/>
+                            <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Procedures Document"/>
+                            <title>Toimenpiteet</title>
+                            <text>
+                                <table>
+                                    <colgroup>
+                                        <col width="25%"/>
+                                        <col width="10%"/>
+                                        <col width="15%"/>
+                                        <col width="25%" span="2"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Toimenpiteen nimi</th>
+                                            <th>Prioriteetti</th>
+                                            <th>Päivämäärä/aika</th>
+                                            <th>Määräykseen liittyvä diagnoosi</th>
+                                            <th>Kommentit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ID="procedure26" styleCode="normRow">
+                                            <td ID="procedure26name">VIERI INR</td>
+                                            <td>Kiireetön</td>
+                                            <td>05.09.2018 08:37 EEST</td>
+                                            <td/>
+                                            <td>
+                                                <paragraph styleCode="header">Tämän toimenpiteen tulokset ovat <content styleCode="xLink2-Result1253391">Tulokset-osiossa</content>.
+                                                </paragraph>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <footnote ID="subTitle25" styleCode="xSectionSubTitle xHidden">tässä palvelukontaktissa</footnote>
+                            </text>
+                            <entry>
+                                <procedure classCode="PROC" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.14"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
+                                    <id extension="1253391-1620" root="1.2.840.114350.1.13.491.3.7.1.1988.1"/>
+                                    <code code="1620" codeSystem="1.2.246.10.15675350.6.3.2006" codeSystemName="HUSlab paikallinen laboratorionimikkeistö">
+                                        <originalText>vieri inr
+                                            <reference value="#procedure26name"/>
+                                        </originalText>
+                                    </code>
+                                    <text>
+                                        <reference value="#procedure26"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180905053700+0300"/>
+                                    <performer typeCode="PRF">
+                                        <assignedEntity classCode="ASSIGNED">
+                                            <id nullFlavor="UNK"/>
+                                            <code nullFlavor="UNK">
+                                                <originalText>General Practice</originalText>
+                                            </code>
+                                            <addr>
+                                                <streetAddressLine>123 Anywhere Street</streetAddressLine>
+                                                <postalCode>53711</postalCode>
+                                                <city>MADISON</city>
+                                                <state>WI</state>
+                                            </addr>
+                                            <telecom use="WP" value="tel:+358-55-555-55555"/>
+                                            <assignedPerson>
+                                                <name>
+                                                    <given>Historical</given>
+                                                    <family>Provider</family>
+                                                    <suffix qualifier="AC">MD</suffix>
+                                                </name>
+                                            </assignedPerson>
+                                            <representedOrganization classCode="ORG">
+                                                <name nullFlavor="UNK"/>
+                                                <telecom nullFlavor="UNK"/>
+                                                <addr>
+                                                    <streetAddressLine nullFlavor="UNK"/>
+                                                    <city nullFlavor="UNK"/>
+                                                    <state nullFlavor="UNK"/>
+                                                    <postalCode nullFlavor="UNK"/>
+                                                </addr>
+                                            </representedOrganization>
+                                        </assignedEntity>
+                                    </performer>
+                                </procedure>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <code code="46209-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="UNSIGNED ORDERS"/>
+                            <title>Unsigned Orders</title>
+                            <div>
+                                <caption>Session-Level Information</caption>
+                                <list>
+                                    <item>
+                                        <caption>Login User ID</caption>
+                                        <content>FAMMD</content>
+                                    </item>
+                                    <item>
+                                        <caption>Login User Name</caption>
+                                        <content>PERUSTERVEYDENHUOLTO, LÄÄKÄRI</content>
+                                    </item>
+                                    <item>
+                                        <caption>Login Provider ID</caption>
+                                        <content>E1000</content>
+                                    </item>
+                                    <item>
+                                        <caption>Login Provider Name</caption>
+                                        <content>Lääkäri Perusterveydenhuolto, lääkäri</content>
+                                    </item>
+                                    <item>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Login Provider Specialties</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>TK-yleislääketiede</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Yleislääketiede</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Radiologia</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </item>
+                                    <item>
+                                        <caption>Encounter Department ID</caption>
+                                        <content>1100001038</content>
+                                    </item>
+                                    <item>
+                                        <caption>Encounter Department Name</caption>
+                                        <content>Tikkurilan terveysasema, 1-tiimi, Vantaan sosiaali- ja terveydenhuolto</content>
+                                    </item>
+                                    <item>
+                                        <caption>Login Department ID</caption>
+                                        <content>1100001038</content>
+                                    </item>
+                                    <item>
+                                        <caption>Login Department Name</caption>
+                                        <content>Tikkurilan terveysasema, 1-tiimi, Vantaan sosiaali- ja terveydenhuolto</content>
+                                    </item>
+                                    <item>
+                                        <caption>Patient Age</caption>
+                                        <content>45v</content>
+                                    </item>
+                                    <item>
+                                        <caption>CDS Trigger</caption>
+                                        <content>5</content>
+                                    </item>
+                                    <item>
+                                        <caption>BPA Web Service Version</caption>
+                                        <content>3.4</content>
+                                    </item>
+                                    <item>
+                                        <caption>BPA Web Service SU Version</caption>
+                                        <content>1</content>
+                                    </item>
+                                    <item>
+                                        <caption>Epic Version</caption>
+                                        <content>8.4</content>
+                                    </item>
+                                    <item>
+                                        <caption>Order Session ID</caption>
+                                    </item>
+                                    <item>
+                                        <caption>Context ID</caption>
+                                        <content>614</content>
+                                    </item>
+                                    <item>
+                                        <caption>Allowed Order Mode</caption>
+                                        <content>IP</content>
+                                    </item>
+                                </list>
+                            </div>
+                            <div>
+                                <caption>Unsigned Orders</caption>
+                            </div>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.18" extension="2015-08-01"/>
+                            <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment Sources"/>
+                            <title>Vakuutus</title>
+                            <text>
+                                <table>
+                                    <colgroup>
+                                        <col width="25%"/>
+                                        <col width="10%"/>
+                                        <col width="15%"/>
+                                        <col width="10%"/>
+                                        <col width="15%"/>
+                                        <col width="25%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Maksaja</th>
+                                            <th>Korvaussopimus / Ryhmä</th>
+                                            <th>Vakuutusnumero</th>
+                                            <th>Tyyppi</th>
+                                            <th>Puhelin</th>
+                                            <th>Osoite</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ID="coverage29">
+                                            <td>VANTAA</td>
+                                            <td>VANTAA</td>
+                                            <td/>
+                                            <td/>
+                                            <td/>
+                                            <td/>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <footnote ID="subTitle28" styleCode="xSectionSubTitle xHidden">alkaen tästä palvelukontaktista</footnote>
+                            </text>
+                            <entry>
+                                <act classCode="ACT" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.60" extension="2015-08-01"/>
+                                    <id extension="6453" root="1.2.840.114350.1.13.491.3.7.2.678671"/>
+                                    <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
+                                    <statusCode code="completed"/>
+                                    <entryRelationship typeCode="COMP">
+                                        <act classCode="ACT" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.61" extension="2015-08-01"/>
+                                            <id extension="10003401" root="1.2.840.114350.1.13.491.3.7.2.698080"/>
+                                            <code codeSystem="2.16.840.1.113883.3.88.12.3221.5.2" codeSystemName="Health Insurance Type" nullFlavor="UNK">
+                                                <translation codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="Source of Payment Typology (PHDSC)" nullFlavor="UNK"/>
+                                            </code>
+                                            <statusCode code="completed"/>
+                                            <performer typeCode="PRF">
+                                                <templateId root="2.16.840.1.113883.10.20.22.4.87"/>
+                                                <assignedEntity classCode="ASSIGNED">
+                                                    <id extension="100034" root="1.2.840.114350.1.13.491.3.7.2.698077"/>
+                                                    <addr>
+                                                        <streetAddressLine nullFlavor="UNK"/>
+                                                        <city nullFlavor="UNK"/>
+                                                        <state nullFlavor="UNK"/>
+                                                        <postalCode nullFlavor="UNK"/>
+                                                    </addr>
+                                                    <telecom nullFlavor="UNK"/>
+                                                    <representedOrganization classCode="ORG">
+                                                        <name>VANTAA</name>
+                                                        <telecom nullFlavor="UNK"/>
+                                                        <addr>
+                                                            <streetAddressLine nullFlavor="UNK"/>
+                                                            <city nullFlavor="UNK"/>
+                                                            <state nullFlavor="UNK"/>
+                                                            <postalCode nullFlavor="UNK"/>
+                                                        </addr>
+                                                    </representedOrganization>
+                                                </assignedEntity>
+                                            </performer>
+                                            <performer typeCode="PRF">
+                                                <templateId root="2.16.840.1.113883.10.20.22.4.88"/>
+                                                <assignedEntity>
+                                                    <id root="eb9d72dc-b0cd-11e8-a947-00505680cc24"/>
+                                                    <code code="GUAR" codeSystem="2.16.840.1.113883.5.110" codeSystemName="Role Class" displayName="Guarantor"/>
+                                                    <addr nullFlavor="UNK"/>
+                                                    <telecom nullFlavor="UNK" use="HP"/>
+                                                    <telecom nullFlavor="UNK" use="WP"/>
+                                                    <assignedPerson>
+                                                        <name nullFlavor="UNK"/>
+                                                    </assignedPerson>
+                                                </assignedEntity>
+                                            </performer>
+                                            <participant typeCode="COV">
+                                                <templateId root="2.16.840.1.113883.10.20.22.4.89"/>
+                                                <participantRole>
+                                                    <id root="1.2.840.114350.1.13.491.3.7.3.678671.315"/>
+                                                    <code codeSystem="2.16.840.1.113883.5.111" codeSystemName="Role Code" nullFlavor="UNK">
+                                                        <originalText>Itse</originalText>
+                                                    </code>
+                                                    <addr nullFlavor="UNK"/>
+                                                    <playingEntity>
+                                                        <name nullFlavor="NI"/>
+                                                        <sdtc:birthTime nullFlavor="NI" xmlns:sdtc="urn:hl7-org:sdtc"/>
+                                                    </playingEntity>
+                                                </participantRole>
+                                            </participant>
+                                            <entryRelationship typeCode="REFR">
+                                                <act classCode="ACT" moodCode="DEF">
+                                                    <id extension="10003401" root="1.2.840.114350.1.13.491.3.7.2.698080"/>
+                                                    <code nullFlavor="NA"/>
+                                                    <text>
+                                                        <reference value="#coverage29"/>
+                                                    </text>
+                                                </act>
+                                            </entryRelationship>
+                                        </act>
+                                    </entryRelationship>
+                                </act>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.22"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.22" extension="2015-08-01"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.22.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.22.1" extension="2015-08-01"/>
+                            <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                            <title>Palvelukontaktin lisätiedot</title>
+                            <text>
+                                <table>
+                                    <colgroup>
+                                        <col width="10%"/>
+                                        <col width="15%"/>
+                                        <col width="25%" span="3"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>Päivämäärä</th>
+                                            <th>Tyyppi</th>
+                                            <th>Yksikkö</th>
+                                            <th>Omatiimi</th>
+                                            <th>Kuvaus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ID="encounter30" styleCode="normRow">
+                                            <td>05.09.2018</td>
+                                            <td ID="encounter30type">Varfariinihoito</td>
+                                            <td>
+                                                <paragraph>Tikkurilan terveysasema, 1-tiimi, Vantaan sosiaali- ja terveydenhuolto</paragraph>
+                                                <paragraph>Kielotie 11</paragraph>
+                                                <paragraph>01300 Vantaa</paragraph>
+                                                <paragraph>09 839 11</paragraph>
+                                            </td>
+                                            <td>
+                                                <paragraph styleCode="Bold">Perusterveydenhuolto, Lääkäri, lääkäri</paragraph>
+                                                <paragraph>123 Anywhere Street</paragraph>
+                                                <paragraph>53711 MADISON WI</paragraph>
+                                                <paragraph>358-55-555-55555</paragraph>
+                                            </td>
+                                            <td/>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry>
+                                <encounter classCode="ENC" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.49"/>
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+                                    <id assigningAuthorityName="EPIC" extension="561346" root="1.2.840.114350.1.13.491.3.7.3.698084.8"/>
+                                    <code code="AMB" codeSystem="2.16.840.1.113883.5.4">
+                                        <originalText>
+                                            <reference value="#encounter30type"/>
+                                        </originalText>
+                                        <translation code="1001" codeSystem="1.2.840.114350.1.13.491.3.7.4.698084.30" codeSystemName="Epic.EncounterType"/>
+                                    </code>
+                                    <text>
+                                        <reference value="#encounter30"/>
+                                    </text>
+                                    <statusCode code="normal"/>
+                                    <effectiveTime value="20180905"/>
+                                    <performer typeCode="PRF">
+                                        <time>
+                                            <low nullFlavor="UNK"/>
+                                            <high nullFlavor="UNK"/>
+                                        </time>
+                                        <assignedEntity classCode="ASSIGNED">
+                                            <id nullFlavor="UNK"/>
+                                            <code nullFlavor="UNK">
+                                                <originalText>TK-yleislääketiede</originalText>
+                                            </code>
+                                            <addr>
+                                                <streetAddressLine>123 Anywhere Street</streetAddressLine>
+                                                <postalCode>53711</postalCode>
+                                                <city>MADISON</city>
+                                                <state>WI</state>
+                                            </addr>
+                                            <telecom use="WP" value="tel:+358-55-555-55555"/>
+                                            <assignedPerson>
+                                                <name>
+                                                    <given>Lääkäri</given>
+                                                    <family>Perusterveydenhuolto</family>
+                                                    <suffix qualifier="AC">lääkäri</suffix>
+                                                </name>
+                                            </assignedPerson>
+                                            <representedOrganization classCode="ORG">
+                                                <name nullFlavor="UNK"/>
+                                                <telecom nullFlavor="UNK"/>
+                                                <addr nullFlavor="UNK"/>
+                                            </representedOrganization>
+                                        </assignedEntity>
+                                    </performer>
+                                    <participant typeCode="LOC">
+                                        <participantRole classCode="SDLOC">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.32"/>
+                                            <id extension="1100001038" root="1.2.840.114350.1.13.491.3.7.2.686980"/>
+                                            <code nullFlavor="UNK">
+                                                <originalText>Avosairaanhoito</originalText>
+                                            </code>
+                                            <addr>
+                                                <streetAddressLine>Kielotie 11</streetAddressLine>
+                                                <city>Vantaa</city>
+                                            </addr>
+                                            <playingEntity classCode="PLC">
+                                                <name>Tikkurilan terveysasema, 1-tiimi, Vantaan sosiaali- ja terveydenhuolto</name>
+                                                <desc>Avosairaanhoito</desc>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <reference typeCode="REFR">
+                                        <externalObservation>
+                                            <code code="2" codeSystem="1.2.840.114350.1.13.491.3.7.3.688882.8100" codeSystemName="Epic.Encounter.Contents"/>
+                                        </externalObservation>
+                                    </reference>
+                                </encounter>
+                            </entry>
+                        </section>
+                    </component>
+                </structuredBody>
+            </component>
+        </ClinicalDocument>
+    </Document>
+</ProcessDocument>
