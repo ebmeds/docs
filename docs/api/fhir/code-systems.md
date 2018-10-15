@@ -4,7 +4,7 @@ EBMeDS uses codes in a lot of different places. Below is a list of the code syst
 
 ## Medical code systems
 
-The full list of code systems for medical or clinical matters is given here: [](http://www.ebmeds.org/www/supported_coding_systems.asp)
+The full list of code systems for medical or clinical matters is given here: [Supported code systems](https://www.ebmeds.org/www/supported_coding_systems.asp)
 
 For `selfcare-*` endpoints EBMeDS may return a customized coding related to actions a patient can do himself, unsupervised. This coding does not yet have an official code system, but is instead an amalgam of an existing code system (Finnish THL service coding or Kuntaliitto service coding) and an urgency code, separated by "-", for example `ADA001-P2`. The urgency code means:
 
