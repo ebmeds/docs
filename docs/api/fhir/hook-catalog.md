@@ -290,7 +290,7 @@ Note that old Questionnaire versions will not be supported indefinitely, and it 
               "coding": [
                 {
                   "system": "https://duodecim.fi/fhir/stu3/CodeSystem/reminder-id",
-                  "code": "46bea5c0-c18e-4e78-a20c-06974bae60f7",
+                  "code": "46bea5c0-c18e-4e78-a20c-06974bae60f7"
                 }
               ]
             }
@@ -342,7 +342,7 @@ Given a MonitoringGoal and related measurements (e.g. a weight loss goal and wei
   "description": "This hook takes a MonitoringGoal resource and a bundle of associated MeasurementObservations and returns textual feedback on the user's progress.",
   "context": {
     "goals": "Goal?patient={{Patient.id}}",
-    "measurements": "Observation?patient={{Patient.id}}",
+    "measurements": "Observation?patient={{Patient.id}}"
   }
 }
 ```

@@ -5,20 +5,22 @@
 In the `selfcare-*` CDS hooks, the following metadata is included (by request from the ODA project) in the SelfCareQuestionnaire resource:
 
 ```json
-"meta":{
-  "profile":[
-    "http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"
-  ],
-  "tag":[
-    {
-      "system":"http://oda.fi/Questionnaire",
-      "code":"symptom"
-    },
-    {
-      "system":"http://oda.fi/cds",
-      "code":"oda1"
-    }
-  ]
+{
+  "meta": {
+    "profile": [
+      "http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"
+    ],
+    "tag": [
+      {
+        "system":"http://oda.fi/Questionnaire",
+        "code":"symptom"
+      },
+      {
+        "system":"http://oda.fi/cds",
+        "code":"oda1"
+      }
+    ]
+  }
 }
 ```
 

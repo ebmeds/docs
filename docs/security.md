@@ -73,7 +73,7 @@ Example:
 {
   "statusCode": 400,
   "message": "Validation error: QuestionnaireResponse did not validate against Questionnaire: [more info]",
-  "code": 'validation',
+  "code": "validation"
 }
 ```
 

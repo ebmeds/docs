@@ -35,28 +35,30 @@ Question with `type: 'display'` require a few more subcategories, which is the p
 Example:
 
 ```json
-{
-  "linkId":"14",
-  "text":"# A subtitle",
-  "type":"display",
-  "extension":[
-    {
-      "url":"http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-      "valueString":"subtitle"
-    }
-  ]
-}
-{
-  "linkId":"15",
-  "text":"Things are really bad.",
-  "type":"display",
-  "extension":[
-    {
-      "url":"http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-      "valueString":"terminus"
-    }
-  ]
-}
+[
+  {
+    "linkId":"14",
+    "text":"# A subtitle",
+    "type":"display",
+    "extension":[
+      {
+        "url":"http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+        "valueString":"subtitle"
+      }
+    ]
+  },
+  {
+    "linkId":"15",
+    "text":"Things are really bad.",
+    "type":"display",
+    "extension":[
+      {
+        "url":"http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+        "valueString":"terminus"
+      }
+    ]
+  }
+]
 ```
 
 ## minValue
@@ -120,7 +122,7 @@ Example:
 {
   "valueCoding":{
     "id": "-1",
-    "display": "None of the above"
+    "display": "None of the above",
     "extension": [
       {
         "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",

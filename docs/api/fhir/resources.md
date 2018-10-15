@@ -17,7 +17,7 @@ An example resource is:
   "resourceType":"Questionnaire",
   "language":"fi",
   "url":"https://www.ebmeds.org/form/api/FHIR/forms/export/107/550",
-  "version":"v0.9.3"
+  "version":"v0.9.3",
   "status":"active",
   "date":"2017-10-11T11:45:49.036Z",
   "publisher":"© Kustannus Oy Duodecim, 2017",
@@ -52,7 +52,7 @@ An example resource is:
       "item":[
         {
           "linkId": "266",
-          "type": "display"
+          "type": "display",
           "text": "A display-type question in the Questionnaire, has no answer but must also be present in the QuestionnaireResponse according to the FHIR spec."
         },
         {
@@ -108,7 +108,7 @@ An example resource is:
                 }
               ]
             }
-          ],
+          ]
         },
         {
           "linkId":"305",
@@ -135,7 +135,7 @@ An example resource is:
                 "display":"Third option."
               }
             }
-          ],
+          ]
         },
         {
           "linkId": "23",
@@ -165,6 +165,7 @@ An example resource is:
             }
           ]
         }
+      ]
     }
   ]
 }
@@ -229,7 +230,7 @@ Here is a complete example:
   "item": [
     {
       "linkId": "introduction",
-      "text": "Introductory text of the questionnaire. Also a container item. Has no answer, but contains other items. The text is written in markdown, so it may contain [links](https://ebmeds.org)."
+      "text": "Introductory text of the questionnaire. Also a container item. Has no answer, but contains other items. The text is written in markdown, so it may contain [links](https://ebmeds.org).",
       "item": [
         {
           "linkId": "266",
@@ -272,8 +273,8 @@ Here is a complete example:
           ]
         },
         {
-          "linkId": "23"
-          "text": "A boolean-type question. In the Questionnaire this question contains display logic, i.e. the question is only visible when certain other questions have been answered in a certain way. In this example, the numerical answer in question ID 3 must be between 15 and 99."
+          "linkId": "23",
+          "text": "A boolean-type question. In the Questionnaire this question contains display logic, i.e. the question is only visible when certain other questions have been answered in a certain way. In this example, the numerical answer in question ID 3 must be between 15 and 99.",
           "answer": [
             {
               "valueBoolean": true
