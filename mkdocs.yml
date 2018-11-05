@@ -1,8 +1,10 @@
 site_name: EBMeDS 2.0
 pages:
   - Home: index.md
-  - Components: components.md
-  - Installation: installation.md
+  - Installation:
+    - System requirements: system-requirements.md
+    - Components: components.md
+    - Installation: installation.md
   - FHIR:
     - Getting started: api/fhir/getting-started.md
     - CDS hooks: api/fhir/cds-hooks.md
@@ -12,9 +14,9 @@ pages:
     - Code Systems: api/fhir/code-systems.md
     - Extensions: api/fhir/extensions.md
     - ODA-specific information: api/fhir/oda.md
-  - XML:
-    - Getting started: api/xml/getting-started.md
-    - XML schema: api/xml/xml-schema.md
+ # - XML:
+ #   - Getting started: api/xml/getting-started.md
+ #   - XML schema: api/xml/xml-schema.md
   - Security & Error handling: security.md
   # - API:
   #   - FHIR STU3: api/fhir-stu3.md

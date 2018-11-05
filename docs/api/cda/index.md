@@ -1,6 +1,6 @@
 # CDA to BPA API
 
-The EBMeDS CDA API expects CDA XML requests and responds with a Best Practice Advisory XML message.
+The EBMEDS CDA API expects CDA XML requests and responds with a Best Practice Advisory XML message.
 
 * URL: `[base-url]/cda`
 

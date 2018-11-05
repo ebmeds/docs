@@ -29,7 +29,7 @@ Example:
 Question with `type: 'display'` require a few more subcategories, which is the purpose of this HL7 extension. The allowed values are:
 
 * `subtitle`: As the name implies, a string designed to be a subtitle. The `text` field in this question is also styled with a markdown-style subtitle tag (`# Example subtitle`).
-* `feedback`: Answering a set of questions in a certain way may provoke some immediate feedback in the questionnaire itself, without having to send the QuestionnaireResponse to EBMeDS. This display-type question contains this kind of feedback.
+* `feedback`: Answering a set of questions in a certain way may provoke some immediate feedback in the questionnaire itself, without having to send the QuestionnaireResponse to EBMEDS. This display-type question contains this kind of feedback.
 * `terminus`: This is similar to `feedback`, except that if the user has answered questions that produce this type of feedback, the situation is so critical that he should be stopped from answering any more questions, and immediately seek help. The UI should hide the questions following this feedback type, if it is visible.
 
 Example:

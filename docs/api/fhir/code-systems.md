@@ -1,12 +1,12 @@
 # Used Code Systems
 
-EBMeDS uses codes in a lot of different places. Below is a list of the code systems used in different parts of the system.
+EBMEDS uses codes in a lot of different places. Below is a list of the code systems used in different parts of the system.
 
 ## Medical code systems
 
 The full list of code systems for medical or clinical matters is given here: [Supported code systems](https://www.ebmeds.org/www/supported_coding_systems.asp)
 
-For `selfcare-*` endpoints EBMeDS may return a customized coding related to actions a patient can do himself, unsupervised. This coding does not yet have an official code system, but is instead an amalgam of an existing code system (Finnish THL service coding or Kuntaliitto service coding) and an urgency code, separated by "-", for example `ADA001-P2`. The urgency code means:
+For `selfcare-*` endpoints EBMEDS may return a customized coding related to actions a patient can do himself, unsupervised. This coding does not yet have an official code system, but is instead an amalgam of an existing code system (Finnish THL service coding or Kuntaliitto service coding) and an urgency code, separated by "-", for example `ADA001-P2`. The urgency code means:
 
 * `P0`: Immediately
 * `P1`: Within 2 hours
@@ -57,7 +57,7 @@ Some code systems are specific to certain resources. They are listed below. The 
 In the ODA project, some ODA specific code systems are used:
 
 * `http://oda.fi/Questionnaire`: Identifies the subtype of SelfCareQuestionnaire. Values: `symptom`, other values unknown.
-* `http://oda.fi/cds`: Tags what CDSS should be used. For EBMeDS, the value is `oda1`.
+* `http://oda.fi/cds`: Tags what CDSS should be used. For EBMEDS, the value is `oda1`.
 
 ### ActivityDefinition
 

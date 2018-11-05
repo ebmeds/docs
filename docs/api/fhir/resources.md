@@ -1,4 +1,4 @@
-# FHIR resources in EBMeDS
+# FHIR resources in EBMEDS
 
 ## SelfCareQuestionnaire
 
@@ -212,7 +212,7 @@ See the [extensions page](extensions.md).
 
 *FHIR profile*: [SelfCareQuestionnaireResponse](https://simplifier.net/DuodecimCDS/SelfCareQuestionnaireResponse)
 
-The [SelfCareQuestionnaireResponse](https://simplifier.net/DuodecimCDS/SelfCareQuestionnaireResponse) is the counterpart to a Questionnaire: it contains the answers that the user has provided. This can be sent to EBMeDS for decision support.
+The [SelfCareQuestionnaireResponse](https://simplifier.net/DuodecimCDS/SelfCareQuestionnaireResponse) is the counterpart to a Questionnaire: it contains the answers that the user has provided. This can be sent to EBMEDS for decision support.
 
 Here is a complete example:
 
@@ -352,7 +352,7 @@ Below is an example of the two kinds of SelfCareActivityDefinitions (one describ
       "summary": "Selfcare action suggestions",
       "indicator": "info",
       "source": {
-        "name": "EBMeDS v2.0.6",
+        "name": "EBMEDS v2.0.6",
         "url": "https://ebmeds.org/version/v2.0.6/data-version/v0.9.2"
       },
       "suggestions": [
@@ -508,7 +508,7 @@ And the fields are the following:
 
 ## Resources for general CDS
 
-At the moment, EBMeDS best supports questionnaire-based decision support in FHIR, using the resources described above. For a full-blown CDS service, a large range of other clinical data about a person can and should be included. The resources for describing these is in a very experimental stage, and the profiles will probably change once real-world use is initiated. The documentation is therefore still mostly in the profiles themselves:
+At the moment, EBMEDS best supports questionnaire-based decision support in FHIR, using the resources described above. For a full-blown CDS service, a large range of other clinical data about a person can and should be included. The resources for describing these is in a very experimental stage, and the profiles will probably change once real-world use is initiated. The documentation is therefore still mostly in the profiles themselves:
 
 * [CDSImmunization](https://simplifier.net/DuodecimCDS/CDSImmunization)
 * [CDSMedicationStatement](https://simplifier.net/DuodecimCDS/CDSMedicationStatement)

@@ -1,6 +1,6 @@
 # Custom REST API
 
-EBMeDS 2.0 is not a full-blown FHIR server, but we do provide a REST interface for getting some of our static FHIR resources via HTTP.
+EBMEDS 2.0 is not a full-blown FHIR server, but we do provide a REST interface for getting some of our static FHIR resources via HTTP.
 
 ## Coaching
 
@@ -34,4 +34,4 @@ The CoachingPlanDefinition is a resource containing a set of messages that are s
 
 A list of available programs are available at the address `[base-url]/coaching/programs` and the individual programs can be accessed at `[base-url]/coaching/programs/[id]`. So for example, on ebmedscloud.org, a coaching program can be retrieved by doing a HTTP GET on the URL `https://ebmedscloud.org/api/fhir/v1/coaching/programs/5`.
 
-The format of the CoachingPlanDefinition is described in more detail in the EBMeDS 2.0 [FHIR resources listing](resources.md#coachingplandefinition).
+The format of the CoachingPlanDefinition is described in more detail in the EBMEDS 2.0 [FHIR resources listing](resources.md#coachingplandefinition).

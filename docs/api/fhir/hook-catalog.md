@@ -1,4 +1,4 @@
-# EBMeDS Hook Catalog
+# EBMEDS Hook Catalog
 
 Below we list the available CDS hook endpoints, i.e. the REST endpoints at `[base-url]/cds-services/[endpoint]`.
 
@@ -8,7 +8,7 @@ Below we list the available CDS hook endpoints, i.e. the REST endpoints at `[bas
 
 *Hook: 'questionnaire-completed'*
 
-This hook is intended for the self-care context, where an individual (either by himself or with the assistance of a healthcare professional) fills in a form related to his or her health. This might be a questionnaire about the person's symptoms, a questionnaire calculating lifestyle-related health risks, etc. The responses are encoded into a FHIR QuestionnaireResponse. EBMeDS responds with ActivityDefinitions that include coded actions available for the individual, e.g. the reservation of a time for a lab test, visit to the doctor, etc. A special ActivityDefinition is provided containing reminder texts, instead of the texts being in the CDS hook cards.
+This hook is intended for the self-care context, where an individual (either by himself or with the assistance of a healthcare professional) fills in a form related to his or her health. This might be a questionnaire about the person's symptoms, a questionnaire calculating lifestyle-related health risks, etc. The responses are encoded into a FHIR QuestionnaireResponse. EBMEDS responds with ActivityDefinitions that include coded actions available for the individual, e.g. the reservation of a time for a lab test, visit to the doctor, etc. A special ActivityDefinition is provided containing reminder texts, instead of the texts being in the CDS hook cards.
 
 ### Used FHIR resources
 
@@ -21,7 +21,7 @@ This hook is intended for the self-care context, where an individual (either by 
 
 ### Versioning info
 
-The version of the Questionnaire resource is tightly bound to the version of the ruleset used in EBMeDS to analyze the QuestionnaireResponse. Therefore the Questionnaire version (along with the Questionnaire ID itself) must be specified in the QuestionnaireResponse. The Questionnaire resource contains the `Questionnaire.url` field which is globally unique. That URL shall be included in the QuestionnaireResponse in the `QuestionnaireResponse.questionnaire.reference` field, which gives EBMeDS enough info to infer the version information.
+The version of the Questionnaire resource is tightly bound to the version of the ruleset used in EBMEDS to analyze the QuestionnaireResponse. Therefore the Questionnaire version (along with the Questionnaire ID itself) must be specified in the QuestionnaireResponse. The Questionnaire resource contains the `Questionnaire.url` field which is globally unique. That URL shall be included in the QuestionnaireResponse in the `QuestionnaireResponse.questionnaire.reference` field, which gives EBMEDS enough info to infer the version information.
 
 Note that old Questionnaire versions will not be supported indefinitely, and it is strongly recommended to always use the latest available questionnaire version for a given questionnaire. It is up to the calling party to make sure that the newest version is in use, information about new releases are provided by Duodecim using a mechanism agreed upon with the customer.
 
@@ -32,7 +32,7 @@ Note that old Questionnaire versions will not be supported indefinitely, and it 
   "id": "selfcare-filled-questionnaire",
   "hook": "questionnaire-completed",
   "name": "Self-care questionnaire analysis service",
-  "description": "A hook for when a FHIR QuestionnaireResponse filled out by a patient/citizen is available for EBMeDS to process. The response may include directions both for the patient himself, and a medical professional.",
+  "description": "A hook for when a FHIR QuestionnaireResponse filled out by a patient/citizen is available for EBMEDS to process. The response may include directions both for the patient himself, and a medical professional.",
   "prefetch": {
     "questionnaireResponse": "/QuestionnaireResponse?patient={{Patient.id}}"
   }
@@ -241,7 +241,7 @@ Note that old Questionnaire versions will not be supported indefinitely, and it 
       "summary": "Selfcare action suggestions",
       "indicator": "info",
       "source": {
-        "name": "EBMeDS v2.0.6",
+        "name": "EBMEDS v2.0.6",
         "url": "https://ebmeds.org/version/v2.0.6/data-version/v0.9.2"
       },
       "suggestions": [
@@ -304,7 +304,7 @@ Note that old Questionnaire versions will not be supported indefinitely, and it 
 
 ## /selfcare-general-cds
 
-The so-called general CDS is the traditional way of using EBMeDS, where as much patient data as possible is sent to the service, and a wide range of reminders and suggested actions are returned.
+The so-called general CDS is the traditional way of using EBMEDS, where as much patient data as possible is sent to the service, and a wide range of reminders and suggested actions are returned.
 
 ### Service description
 

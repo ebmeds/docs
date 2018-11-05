@@ -1,26 +1,26 @@
 # Components
 
-![EBMeDS architecture](images/EBMeDS-architecture.png)
+![EBMEDS architecture](images/EBMEDS-architecture.png)
 
-When fully deployed, the EBMeDS solution includes the components pictured above. Each component is a Docker container, inside a Docker Swarm. Any of these components can be replicated across several machines, as performance and availability needs dictate. Docker Swarm performs an automatic round-robin load balancing on every network request done to any container with multiple instances.
+When fully deployed, the EBMEDS solution includes the components pictured above. Each component is a Docker container, inside a Docker Swarm. Any of these components can be replicated across several machines, as performance and availability needs dictate. Docker Swarm performs an automatic round-robin load balancing on every network request done to any container with multiple instances.
 
 ## api-gateway
 
 Github: [](https://github.com/ebmeds/api-gateway)
 
-The API gateway is the access point from the outside world. It mostly acts as a request broker, forwarding requests to the appropriate containers, usually the engine. At the moment, it also provides the translation services between FHIR and the EBMeDS native XML format. Another output option is a custom JSON format used by some EBMeDS-connected apps.
+The API gateway is the access point from the outside world. It mostly acts as a request broker, forwarding requests to the appropriate containers, usually the engine. At the moment, it also provides the translation services between FHIR and the EBMEDS native XML format. Another output option is a custom JSON format used by some EBMEDS-connected apps.
 
-* Input: FHIR requests, EBMeDS XML requests.
+* Input: FHIR requests, EBMEDS XML requests.
 
-* Output: FHIR, EBMeDS XML, custom JSON formats.
+* Output: FHIR, EBMEDS XML, custom JSON formats.
 
 ## engine
 
 The main service, performing most of the calculations when performing decision support. Takes patient XML data as an input, and outputs data to aid in clinical decision making. Most notably, text-based reminder messages. Also produces
 
-* Input: EBMeDS XML
+* Input: EBMEDS XML
 
-* Output: EBMeDS XML, custom JSON formats
+* Output: EBMEDS XML, custom JSON formats
 
 ## coaching
 
@@ -34,7 +34,7 @@ An ODA-specific container, may or may not be present in the future. A simple RES
 
 A UI providing a specialised view of the results obtained from the engine, for a specific patient. This container works like a kind of proxy to the engine: instead of sending the XML with patient data to the engine, it is sent to this container. The request is sent onward to the engine with some special flags, making the engine produce a specialised JSON format, that this container renders as HTML for the user. The JSON can also be sent directly to the user, should he want to build his own UI.
 
-* Input: EBMeDS XML
+* Input: EBMEDS XML
 
 * Output: HTML
 
@@ -42,7 +42,7 @@ A UI providing a specialised view of the results obtained from the engine, for a
 
 Similar to diagnosis-specific-view, this is another specialised UI view, focusing on medication.
 
-* Input: EBMeDS XML
+* Input: EBMEDS XML
 
 * Output: HTML
 
@@ -61,11 +61,11 @@ A standard Logstash container. Logs from all other containers are sent here, whe
 
 ## kibana
 
-A standard Kibana container. Kibana works as a web UI for inspecting logs or any other elasticsearch data. At the moment Kibana in EBMeDS is only geared towards use by system administrators and developers, but there is some demand for users to be able to access their own logs. It should be noted that with standard settings, Elasticsearch and Kibana have no user or namespace support, everything is global. This can be changed by getting an X-Pack license, which is costly.
+A standard Kibana container. Kibana works as a web UI for inspecting logs or any other elasticsearch data. At the moment Kibana in EBMEDS is only geared towards use by system administrators and developers, but there is some demand for users to be able to access their own logs. It should be noted that with standard settings, Elasticsearch and Kibana have no user or namespace support, everything is global. This can be changed by getting an X-Pack license, which is costly.
 
 # Supporting tools
 
-There are a number of tools external to the EBMeDS deployment that is used primarily by Duodecim to produce content. These are hosted by Duodecim.
+There are a number of tools external to the EBMEDS deployment that is used primarily by Duodecim to produce content. These are hosted by Duodecim.
 
 ## Script editor
 
