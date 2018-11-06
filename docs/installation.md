@@ -62,7 +62,7 @@ These services are pre-configured to work together, however some settings need t
 
 If you don't already have it, you need a Duodecim-supplied username and password to be able to download the EBMEDS Docker images, which reside in a private repository at `quay.io`. The username is in the form `duodecim+yourname`.
 
-### Start the services
+### Start the service
 
 EBMEDS' Docker images are stored in a repository on quay.io. Vendor organizations are provided with a login username and password. The credentials are asked on each run of the `start.sh` command, which quickly gets cumbersome. Instead, the credentials can be passed as environment variables `DOCKER_LOGIN` and `DOCKER_PASSWORD`, like so:
 
@@ -70,9 +70,27 @@ EBMEDS' Docker images are stored in a repository on quay.io. Vendor organization
 DOCKER_LOGIN=duodecim+example DOCKER_PASSWORD=example sudo -E sh start.sh
 ```
 
-### File system access
+### Configure the service
 
-Docker containers cannot per default persist data to disk, i.e. all changes to the container file system are lost when a container is shut down. Therefore, Docker must be explicitly told when it is allowed to change the filesystem on the server. This is done by mounting so-called *volumes* into the containers. Changes to the files inside the containers are then reflected on the filesystem of the server itself. The volumes are usually physically located in `/var/lib/docker/volumes`, but this varies from system to system. In any case, wherever these volumes are kept, sufficient disk space should be reserved.
+The main configuration files are `config.env` for system configuration, and `users.json` for configuring the actual features of EBMEDS. More in this on the [configuration page](configuration.md).
+
+### Stopping or updating the service
+
+Stopping is simply done by running the `stop.sh` script, potentially with super-user privileges. In other words,
+
+```bash
+sudo sh stop.sh
+```
+
+while updating the service (e.g. if you want to deploy a new version or change the configuration) is done by repeating the command given in *Start the service*.
+
+## File system access
+
+Docker containers cannot per default persist data to disk, i.e. all changes to the container file system are lost when a container is shut down. Therefore, Docker must be explicitly told when it is allowed to read from or write to the filesystem on the server.
+
+Reading files from outside the container (in practice, we are talking about configuration files) are done by *mounting* the files into the container. Examples of this can be seen in `docker-compose.yml` under the `volumes` property of some of the services.
+
+Writing to the filesystem outside the container is done by mounting so-called *volumes* into the containers. Changes to the files inside the containers are then reflected on the filesystem of the server itself. The volumes are usually physically located in `/var/lib/docker/volumes`, but this varies from system to system. In any case, wherever these volumes are kept, sufficient disk space should be reserved.
 
 <aside class="notice">
 Also note that the Docker daemon itself will store pulled images internally. These images are not removed by default when new versions are pulled, to support roll-backs of updates that are not working etc. The system administrator should keep in mind that the images will, in time, take up a lot of disk space, and steps should be taken to remove unused Docker images. These are also kept in **/var/lib/docker**
