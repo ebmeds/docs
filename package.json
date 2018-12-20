@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "EBMEDS public docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebmeds/docs.git"
+  },
+  "keywords": [
+    "ebmeds"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebmeds/docs/issues"
+  },
+  "homepage": "https://github.com/ebmeds/docs#readme"
+}

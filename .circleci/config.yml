@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build-and-deploy:
+    working_directory: ~/workdir
+    docker:
+      - image: circleci/python
+    steps:
+      - checkout
+      - run:
+          name: escalate-git-priviledge
+          command: 'git remote rm origin && git remote add origin https://duodecimjenkins:$GITHUB_TOKEN@github.com/ebmeds/docs.git && git fetch origin && git pull origin master'
+      - run:
+          name: update-pip
+          command: 'pip install --upgrade pip'
+      - run:
+          name: install-mkdocs
+          command: 'pip install mkdocs --user'
+      - run:
+          name: github-deploy 
+          command: '~/.local/bin/mkdocs gh-deploy'
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build-and-deploy:
+          context: writable-github
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
+
+
