@@ -1,6 +1,6 @@
 # Components
 
-![EBMEDS architecture](images/EBMEDS-architecture.png)
+![EBMEDS architecture](images/EBMeDS-architecture.png)
 
 When fully deployed, the EBMEDS solution includes the components pictured above. Each component is a Docker container, inside a Docker Swarm. Any of these components can be replicated across several machines, as performance and availability needs dictate. Docker Swarm performs an automatic round-robin load balancing on every network request done to any container with multiple instances.
 
