@@ -6,9 +6,9 @@ EBMEDS receives structured patient data from electronic health records (EHRs) an
 
 EBMEDS is a platform-independent service, which can be integrated into any EHR containing structured patient data. Other customized integrations are also possible.
 
-In addition to local installations of EBMEDS, there is also a cloud version of the service called [](https://ebmedscloud.org) which will be brought into use incrementally during 2017-2018.
+In addition to local installations of EBMEDS, there is also a cloud version of the service called [](https://ebmedscloud.org) which will be brought into use incrementally during 2019-2020.
 
-EBMEDS is developed by [Duodecim Medical Publications Ltd](http://www.duodecimpublications.com/), a Finnish company owned by the Finnish Medical Society Duodecim. Both the association and the company have a long-standing collaborative relationship with the [Cochrane Collaboration](http://www.cochrane.org/), the [GRADE Working Group](http://www.gradeworkinggroup.org/), the [Guidelines International Network (G-I-N)](http://www.g-i-n.net/) and the publishing company [Wiley-Blackwell](http://www.wiley.com/).
+EBMEDS is developed by [Duodecim Medical Publications Ltd](http://www.ebmeds.org/en/), a Finnish company owned by the Finnish Medical Society Duodecim. Both the association and the company have a long-standing collaborative relationship with the [Cochrane Collaboration](http://www.cochrane.org/), the [GRADE Working Group](http://www.gradeworkinggroup.org/), the [Guidelines International Network (G-I-N)](http://www.g-i-n.net/) and the publishing company [Wiley-Blackwell](http://www.wiley.com/).
 
 # Getting started
 
