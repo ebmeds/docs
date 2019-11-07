@@ -1,26 +1,26 @@
 # System requirements
 
-EBMEDS is a collection of services delivered as Docker containers. The system consists of the core EBMEDS services which are stateless, and auxiliary services such as databases for storing settings and logs. Docker was chosen to provide a standardized way of scaling up the solution. The solution is designed to be run in large, multi-node clusters but can be deployed on single servers as well.
+EBMEDS is a collection of services delivered as Docker containers. The system consists of the core EBMEDS services which are stateless, and auxiliary services such as databases for storing settings and logs. Docker was chosen to provide a standardized way of scaling up the solution. The solution is designed to be run in large, multi-node clusters but can be deployed on single servers as well. The recommended way of deploying EBMEDS is with Kubernetes. Docker Swarm installation is possible too.
 
 ## Reference deployment instructions
 
-Docker containers are highly portable and can be deployed in numerous ways. For inexperienced Docker system administrators, Duodecim provides instructions for a small reference installation with sensible defaults. These instructions are in the Github repository [ebmeds-docker](https://github.com/ebmeds/ebmeds-docker).
+Docker containers are highly portable and can be deployed in numerous ways. For inexperienced Docker system administrators, Duodecim provides instructions for a small reference installation with sensible defaults. These instructions are in the Github repository [ebmeds-docker](https://github.com/ebmeds/ebmeds-docker). A more sophisticated example deployment using Kubernetes can be found in [ebmeds-kubernetes](https://github.com/ebmeds/ebmeds-kubernetes).
 
 ## Example single-node server
 
 If you are in a hurry and don't want to read the details below, here is a server configuration that should work for a small installation where no clustering is needed:
 
 * CPU: 2 x Intel i5-7600
-* RAM: 8 GB
-* Disk space: 256 GB
+* RAM: 16 GB
+* Disk space: 512 GB
 * OS: CentOS 7.4 (with latest patches)
-* Docker: version 18.03.1-ce
+* Docker Engine: version 18.03.1-ce
 
 ## Software requirements
 
 ### Docker
 
-The minimum requirement is Docker 1.13, but we recommend always using the latest stable version, especially in multi-node clusters. Most Linux distributions have a mechanism for installing Docker straight from Docker Inc's own repositories, which is the recommended way.
+The minimum requirement is Docker 2 and Docker Engine 18.03.1-ce, but we recommend always using the latest stable version, especially in multi-node clusters. Most Linux distributions have a mechanism for installing Docker straight from Docker Inc's own repositories, which is the recommended way.
 
 Docker comes in the free Community Edition (CE) and the paid-for Enterprise Edition (EE). EBMEDS runs on both, although inexperienced Docker admins may find the support channel for Enterprise Edition helpful.
 
@@ -49,6 +49,7 @@ For population analysis, Elasticsearch (and Kibana) is still mandatory.
 
 The hardware requirements of course rely on the scale of the installation. Below, we have listed recommendations for a single cluster node (or just a single server) when Elasticsearch is used, as per the reference installation. Should Elasticsearch be irrelevant for you, the changes in hardware requirements are noted separately below.
 
+
 ### CPU
 
 Any modern multicore x86_64 CPU is accepted. For performance, multiple cores are more important than higher clock rates.
@@ -58,10 +59,10 @@ Any modern multicore x86_64 CPU is accepted. For performance, multiple cores are
 
 ### RAM
 
-* Minimum requirement: 8 GB (4 GB without Elasticsearch)
-* Recommended: 16 GB (8 GB without Elasticsearch)
+* Minimum requirement: 16 GB (8 GB without Elasticsearch)
+* Recommended: 32 GB (16 GB without Elasticsearch)
 
-### Disk space:
+### Disk space
 
 The main things that take up disk space are:
 
@@ -70,5 +71,5 @@ The main things that take up disk space are:
 
 If Elasticsearch is used, there should be a monitoring and archiving strategy for the data. Of course, this goes for any kind of logging solution.
 
-* Minimum requirement: 256 GB (128 GB without Elasticsearch)
-* Recommended: 512 GB (128 GB without Elasticsearch)
+* Minimum requirement: 512 GB (128 GB without Elasticsearch)
+* Recommended: 1 TB (128 GB without Elasticsearch)
