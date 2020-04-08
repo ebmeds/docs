@@ -25,9 +25,6 @@ workflows:
       - build-and-deploy:
           context: writable-github
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              ignore: /.*/
-
-
+              only:
+                - master
