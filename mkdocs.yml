@@ -18,6 +18,7 @@ pages:
  #   - Getting started: api/xml/getting-started.md
  #   - XML schema: api/xml/xml-schema.md
   - Security & Error handling: security.md
+  - EBMEDS Cloud: ebmeds-cloud.md
   # - API:
   #   - FHIR STU3: api/fhir-stu3.md
   #   - XML: api/xml.md
