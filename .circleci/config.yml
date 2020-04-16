@@ -7,9 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: escalate-git-priviledge
-          command: 'git remote rm origin && git remote add origin https://duodecimjenkins:$GITHUB_TOKEN@github.com/ebmeds/docs.git && git fetch origin && git pull origin master'
-      - run:
           name: update-pip
           command: 'pip install --upgrade pip'
       - run:
