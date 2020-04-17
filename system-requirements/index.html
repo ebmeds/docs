@@ -158,6 +158,12 @@
                     </li>
                 
                 
+                
+                    <li >
+                        <a href="ebmeds-cloud/">EBMEDS Cloud</a>
+                    </li>
+                
+                
                 </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -199,27 +205,27 @@
                 
                 <li class="third-level"><a href="#cpu">CPU</a></li>
                 <li class="third-level"><a href="#ram">RAM</a></li>
-                <li class="third-level"><a href="#disk-space">Disk space:</a></li>
+                <li class="third-level"><a href="#disk-space">Disk space</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="system-requirements">System requirements</h1>
-<p>EBMEDS is a collection of services delivered as Docker containers. The system consists of the core EBMEDS services which are stateless, and auxiliary services such as databases for storing settings and logs. Docker was chosen to provide a standardized way of scaling up the solution. The solution is designed to be run in large, multi-node clusters but can be deployed on single servers as well.</p>
+<p>EBMEDS is a collection of services delivered as Docker containers. The system consists of the core EBMEDS services which are stateless, and auxiliary services such as databases for storing settings and logs. Docker was chosen to provide a standardized way of scaling up the solution. The solution is designed to be run in large, multi-node clusters but can be deployed on single servers as well. The recommended way of deploying EBMEDS is with Kubernetes. Docker Swarm installation is possible too.</p>
 <h2 id="reference-deployment-instructions">Reference deployment instructions</h2>
-<p>Docker containers are highly portable and can be deployed in numerous ways. For inexperienced Docker system administrators, Duodecim provides instructions for a small reference installation with sensible defaults. These instructions are in the Github repository <a href="https://github.com/ebmeds/ebmeds-docker">ebmeds-docker</a>.</p>
+<p>Docker containers are highly portable and can be deployed in numerous ways. For inexperienced Docker system administrators, Duodecim provides instructions for a small reference installation with sensible defaults. These instructions are in the Github repository <a href="https://github.com/ebmeds/ebmeds-docker">ebmeds-docker</a>. A more sophisticated example deployment using Kubernetes can be found in <a href="https://github.com/ebmeds/ebmeds-kubernetes">ebmeds-kubernetes</a>.</p>
 <h2 id="example-single-node-server">Example single-node server</h2>
 <p>If you are in a hurry and don't want to read the details below, here is a server configuration that should work for a small installation where no clustering is needed:</p>
 <ul>
 <li>CPU: 2 x Intel i5-7600</li>
-<li>RAM: 8 GB</li>
-<li>Disk space: 256 GB</li>
+<li>RAM: 16 GB</li>
+<li>Disk space: 512 GB</li>
 <li>OS: CentOS 7.4 (with latest patches)</li>
-<li>Docker: version 18.03.1-ce</li>
+<li>Docker Engine: version 18.03.1-ce</li>
 </ul>
 <h2 id="software-requirements">Software requirements</h2>
 <h3 id="docker">Docker</h3>
-<p>The minimum requirement is Docker 1.13, but we recommend always using the latest stable version, especially in multi-node clusters. Most Linux distributions have a mechanism for installing Docker straight from Docker Inc's own repositories, which is the recommended way.</p>
+<p>The minimum requirement is Docker 2 and Docker Engine 18.03.1-ce, but we recommend always using the latest stable version, especially in multi-node clusters. Most Linux distributions have a mechanism for installing Docker straight from Docker Inc's own repositories, which is the recommended way.</p>
 <p>Docker comes in the free Community Edition (CE) and the paid-for Enterprise Edition (EE). EBMEDS runs on both, although inexperienced Docker admins may find the support channel for Enterprise Edition helpful.</p>
 <h3 id="operating-system">Operating system</h3>
 <p>EBMEDS requires Linux. Any of the Linux distributions with the official <em>Licensed Docker Infrastructure</em> mark works well, meaning either CentOS, Fedora, Debian or Ubuntu. Please see the <a href="https://docs.docker.com/install/#server">Docker documentation</a> for more details about specific versions and caveats.</p>
@@ -244,10 +250,10 @@
 </ul>
 <h3 id="ram">RAM</h3>
 <ul>
-<li>Minimum requirement: 8 GB (4 GB without Elasticsearch)</li>
-<li>Recommended: 16 GB (8 GB without Elasticsearch)</li>
+<li>Minimum requirement: 16 GB (8 GB without Elasticsearch)</li>
+<li>Recommended: 32 GB (16 GB without Elasticsearch)</li>
 </ul>
-<h3 id="disk-space">Disk space:</h3>
+<h3 id="disk-space">Disk space</h3>
 <p>The main things that take up disk space are:</p>
 <ul>
 <li>Database contents, i.e. logs and population analysis data</li>
@@ -255,8 +261,8 @@
 </ul>
 <p>If Elasticsearch is used, there should be a monitoring and archiving strategy for the data. Of course, this goes for any kind of logging solution.</p>
 <ul>
-<li>Minimum requirement: 256 GB (128 GB without Elasticsearch)</li>
-<li>Recommended: 512 GB (128 GB without Elasticsearch)</li>
+<li>Minimum requirement: 512 GB (128 GB without Elasticsearch)</li>
+<li>Recommended: 1 TB (128 GB without Elasticsearch)</li>
 </ul></div>
         
     </div>
