@@ -24,3 +24,4 @@ See the [system requirements page](system-requirements.md) for a detailed overvi
 
 * [EBMEDS script descriptions](http://www.ebmeds.org/web/guest/scripts)
 * [Duodecim's FHIR resources](https://simplifier.net/DuodecimCDS)
+* [EBMEDS product lifecycle](api/lifecycle/index.md)
