@@ -1,4 +1,4 @@
-Browser support
+# Browser support
 
 We officially support the last two versions of every major browser. Specifically, we test on the following browsers:
 
