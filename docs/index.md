@@ -15,6 +15,7 @@ EBMEDS is developed by [Duodecim Medical Publications Ltd](http://www.ebmeds.org
 EBMEDS talks two different protocols, JSON-formatted FHIR STU3, and a native XML format:
 
 * [Get started with FHIR](api/fhir/getting-started.md)
+* [Installation](installation.md)
 
 # System requirements
 
@@ -24,4 +25,8 @@ See the [system requirements page](system-requirements.md) for a detailed overvi
 
 * [EBMEDS script descriptions](http://www.ebmeds.org/web/guest/scripts)
 * [Duodecim's FHIR resources](https://simplifier.net/DuodecimCDS)
+* [EBMEDS cloud](ebmeds-cloud.md)
 * [EBMEDS product lifecycle](api/lifecycle/index.md)
+* [EBMEDS supported browsers](supported-browsers.md)
+* [EBMEDS components](components.md)
+* [EBMEDS security](security.md)
