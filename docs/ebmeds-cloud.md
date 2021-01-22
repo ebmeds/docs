@@ -1,6 +1,21 @@
 # EBMEDS 2.0 Cloud
 
+## Requirements for connecting
+
+Connecting to ebmedscloud.org service requires the following
+- Client public IP address(es) to be whitelisted
+- Header token for test and for each customer, or for each registrar in case the same EHR installation is used by multiple registrars
+
 ## Endpoints
+
+### ebmedscloud.org
+
+| Service         | URL                                                    |
+| --------------- | ------------------------------------------------------ |
+| Production      | ebmedscloud.org                                        |
+| Staging         | stg.ebmedscloud.org                                    |
+| Testing         | test.ebmedscloud.org                                   |
+
 
 ### `POST /api/v1/cds` - Clinical Decision Support
 
