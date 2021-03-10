@@ -232,7 +232,7 @@
 <p>The version of the Questionnaire resource is tightly bound to the version of the ruleset used in EBMEDS to analyze the QuestionnaireResponse. Therefore the Questionnaire version (along with the Questionnaire ID itself) must be specified in the QuestionnaireResponse. The Questionnaire resource contains the <code>Questionnaire.url</code> field which is globally unique. That URL shall be included in the QuestionnaireResponse in the <code>QuestionnaireResponse.questionnaire.reference</code> field, which gives EBMEDS enough info to infer the version information.</p>
 <p>Note that old Questionnaire versions will not be supported indefinitely, and it is strongly recommended to always use the latest available questionnaire version for a given questionnaire. It is up to the calling party to make sure that the newest version is in use, information about new releases are provided by Duodecim using a mechanism agreed upon with the customer.</p>
 <h3 id="service-description">Service description</h3>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;id&quot;: &quot;selfcare-filled-questionnaire&quot;,
   &quot;hook&quot;: &quot;questionnaire-completed&quot;,
   &quot;name&quot;: &quot;Self-care questionnaire analysis service&quot;,
@@ -242,9 +242,8 @@
   }
 }
 </code></pre>
-
 <h3 id="example-request">Example request</h3>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;hook&quot;: &quot;questionnaire-completed&quot;,
   &quot;context&quot;: {
     &quot;dataVersion&quot;: &quot;latest&quot;
@@ -433,9 +432,8 @@
   }
 }
 </code></pre>
-
 <h3 id="example-response">Example response</h3>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;cards&quot;: [
     {
       &quot;summary&quot;: &quot;Selfcare action suggestions&quot;,
@@ -501,11 +499,10 @@
   ]
 }
 </code></pre>
-
 <h2 id="selfcare-general-cds">/selfcare-general-cds</h2>
 <p>The so-called general CDS is the traditional way of using EBMEDS, where as much patient data as possible is sent to the service, and a wide range of reminders and suggested actions are returned.</p>
 <h3 id="service-description_1">Service description</h3>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;id&quot;: &quot;selfcare-general-cds&quot;,
   &quot;hook&quot;: &quot;general-cds&quot;,
   &quot;name&quot;: &quot;General decision support, no specialization.&quot;,
@@ -523,11 +520,10 @@
   }
 }
 </code></pre>
-
 <h2 id="selfcare-monitoring">/selfcare-monitoring</h2>
 <p>Given a MonitoringGoal and related measurements (e.g. a weight loss goal and weight measurements), provide feedback on the progress.</p>
 <h3 id="service-description_2">Service description</h3>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;id&quot;: &quot;selfcare-monitoring&quot;,
   &quot;hook&quot;: &quot;selfcare-monitoring&quot;,
   &quot;name&quot;: &quot;Monitoring of certain observations for self-care purposes&quot;,

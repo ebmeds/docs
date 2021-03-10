@@ -224,7 +224,7 @@
 <p>The FHIR <a href="https://www.hl7.org/fhir/questionnaire.html">Questionnaire resource</a> is a general way of describing, you guessed it, questionnaires.</p>
 <h3 id="example">Example</h3>
 <p>An example resource is:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;resourceType&quot;:&quot;Questionnaire&quot;,
   &quot;language&quot;:&quot;fi&quot;,
   &quot;url&quot;:&quot;https://www.ebmeds.org/form/api/FHIR/forms/export/107/550&quot;,
@@ -381,7 +381,6 @@
   ]
 }
 </code></pre>
-
 <p>With the fields:</p>
 <ul>
 <li><code>resourceType</code> (string): Always <code>Questionnaire</code>.</li>
@@ -422,7 +421,7 @@
 <p><em>FHIR profile</em>: <a href="https://simplifier.net/DuodecimCDS/SelfCareQuestionnaireResponse">SelfCareQuestionnaireResponse</a></p>
 <p>The <a href="https://simplifier.net/DuodecimCDS/SelfCareQuestionnaireResponse">SelfCareQuestionnaireResponse</a> is the counterpart to a Questionnaire: it contains the answers that the user has provided. This can be sent to EBMEDS for decision support.</p>
 <p>Here is a complete example:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;resourceType&quot;: &quot;QuestionnaireResponse&quot;,
   &quot;id&quot;: &quot;0685d814-f4af-41a3-8547-5c7e5f97c923&quot;,
   &quot;questionnaire&quot;: {
@@ -491,7 +490,6 @@
   ]
 }
 </code></pre>
-
 <p>So the structure has the following fields:</p>
 <ul>
 <li><code>resourceType</code> (string): Always <code>QuestionnaireResponse</code>.</li>
@@ -545,7 +543,7 @@
 </ul>
 <h3 id="example_1">Example</h3>
 <p>Below is an example of the two kinds of SelfCareActivityDefinitions (one describing an action, one containing reminder texts) in a CDS response:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;cards&quot;: [
     {
       &quot;summary&quot;: &quot;Selfcare action suggestions&quot;,
@@ -611,7 +609,6 @@
   ]
 }
 </code></pre>
-
 <p>And the fields are described as follows.</p>
 <ul>
 <li><code>resourceType</code> (string): Always <code>ActivityDefinition</code> for this resource.</li>
@@ -659,7 +656,6 @@
   }
 }
 </code></pre>
-
 <p>And the fields are the following:</p>
 <ul>
 <li><code>code.coding</code>: The code system and coding describing the concept.</li>
@@ -694,7 +690,6 @@
   ]
 }
 </code></pre>
-
 <p>And the fields are the following:</p>
 <ul>
 <li><code>prediction.outcome</code>: The code system and coding describing the outcome that may occur.</li>

@@ -227,7 +227,7 @@
 <p>The REST API for CDS hooks is very simple. One can <code>GET</code> the list of available hooks (the "hook catalog") from <code>[base-url]/cds-services</code>, and one calls a hook by <code>POST</code>ing to <code>[base-url]/cds-services/[hook-name]</code>. The base URL depends on where and how EBMEDS is installed: one example is <code>https://ebmedscloud.org/api/fhir/v1</code>.</p>
 <h2 id="hook-description-format">Hook description format</h2>
 <p>We will continue with the <code>questionnaire-completed</code> example mentioned briefly above. The EBMEDS hook catalog specifies this kind of hook:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;id&quot;: &quot;selfcare-filled-questionnaire&quot;,
   &quot;hook&quot;: &quot;questionnaire-completed&quot;,
   &quot;name&quot;: &quot;Self-care questionnaire analysis service&quot;,
@@ -237,7 +237,6 @@
   }
 }
 </code></pre>
-
 <p>So what does this mean? Let's go through the hook description field by field:</p>
 <ul>
 <li><code>id</code>: Again, the main identifier for the hook in question. This field determines the URL used when calling the hook, e.g. <code>https://ebmedscloud.org/api/fhir/v1/cds-services/selfcare-filled-questionnaire</code>. At the same time, the <code>id</code> provides the most high level context for this hook. The value is unique.</li>
@@ -251,7 +250,7 @@
 </ul>
 <h2 id="calling-a-hook">Calling a hook</h2>
 <p>So, given the hook description above, we can call the hook. The format is, quite simply:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;hook&quot;: &quot;questionnaire-completed&quot;,
   &quot;prefetch&quot;: {
     &quot;questionnaireResponse&quot;: {
@@ -263,7 +262,6 @@
   }
 }
 </code></pre>
-
 <ul>
 <li><code>hook</code>: The same value as in the hook description.</li>
 <li><code>prefetch</code>: Contains the same properties as in the hook description. In this case, the wanted QuestionnaireResponse resource is in <code>prefetch.questionnaireResponse.resource</code>.</li>
@@ -274,7 +272,7 @@
 <p>EBMEDS uses two patterns for CDS hook responses. The first pattern is a traditional approach, well suited for the CDS hooks standard. The second pattern is customized for the selfcare context. The example above, as you may remember, is in the selfcare context, so the call above will return the second pattern. More details below.</p>
 <h3 id="traditional-response-to-be-implemented">Traditional response (to be implemented)</h3>
 <p>Traditional CDS is focused on providing one or more text-based messages to a clinical professional, sometimes accompanied by some suggested actions, identified by a code. Each message, or <em>reminder</em>, is independent of the others, i.e. the same actions may be suggested in multiple reminders. It is up to the calling party to handle a user-friendly display of the information, potentially removing duplicate suggested actions, rendering different kinds of messages in different ways etc. An example, showing two reminders, is the following:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;cards&quot;: [
     {
       &quot;summary&quot;: &quot;Decreased renal function, switch tiatside to furosemide?&quot;,
@@ -307,7 +305,6 @@
   ]
 }
 </code></pre>
-
 <p>Again, <code>ActivityDefinition...</code> signifies a FHIR resource that is omitted for brevity.</p>
 <ul>
 <li><code>cards</code>: Array of one or more card structures, containing a message, importance level, source data and suggested actions.</li>
@@ -320,7 +317,7 @@
 <p>These cards are to be displayed by the calling party in a manner they see fit. Refer to the documentation of individual hooks regarding the formats and codings for suggested actions.</p>
 <h3 id="custom-self-care-card-format">Custom self-care card format</h3>
 <p>The self-care context poses some unique challenges. Originally created for a national project in Finland, these CDS cards are required to leave nothing to chance, since most parts of the self-care project in question are automated, without human intervention. In other words, the card format is too vague to offer much help, and all human-readable data is stripped out of it. Instead, the data is all in coded form inside <code>suggestions</code>, more specifically in the form of ActivityDefinition resources. Please refer to the <code>selfcare-*</code> hooks in the hook catalog.</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;cards&quot;: [
     {
       &quot;source&quot;: {

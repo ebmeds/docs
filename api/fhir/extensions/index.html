@@ -218,7 +218,7 @@
 </ul>
 <p>Contains the sub-extension <code>instruction-text</code>. Has a string value which is a markdown string containing a link to long-form self-care instructions.</p>
 <p>Example:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;url&quot;:&quot;https://duodecim.fi/fhir/extensions/self-care-instructions&quot;,
   &quot;extension&quot;:[
     {
@@ -228,7 +228,6 @@
   ]
 }
 </code></pre>
-
 <h2 id="displaycategory">displayCategory</h2>
 <ul>
 <li>URL: <code>http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory</code></li>
@@ -241,7 +240,7 @@
 <li><code>terminus</code>: This is similar to <code>feedback</code>, except that if the user has answered questions that produce this type of feedback, the situation is so critical that he should be stopped from answering any more questions, and immediately seek help. The UI should hide the questions following this feedback type, if it is visible.</li>
 </ul>
 <p>Example:</p>
-<pre><code class="json">[
+<pre><code class="language-json">[
   {
     &quot;linkId&quot;:&quot;14&quot;,
     &quot;text&quot;:&quot;# A subtitle&quot;,
@@ -266,7 +265,6 @@
   }
 ]
 </code></pre>
-
 <h2 id="minvalue">minValue</h2>
 <ul>
 <li>URL: <code>http://hl7.org/fhir/StructureDefinition/minValue</code></li>
@@ -274,7 +272,7 @@
 </ul>
 <p>Extension by HL7 to specify a minimum value for a numerical question. Is often seen together with maxValue.</p>
 <p>Example:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;linkId&quot;:&quot;15&quot;,
   &quot;text&quot;:&quot;Give the length of your foot.&quot;,
   &quot;type&quot;:&quot;decimal&quot;,
@@ -286,7 +284,6 @@
   ]
 }
 </code></pre>
-
 <h2 id="maxvalue">maxValue</h2>
 <ul>
 <li>URL: <code>http://hl7.org/fhir/StructureDefinition/minValue</code></li>
@@ -294,7 +291,7 @@
 </ul>
 <p>Extension by HL7 to specify a maximum value for a numerical question. Is often seen together with minValue.</p>
 <p>Example:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;linkId&quot;:&quot;15&quot;,
   &quot;text&quot;:&quot;Give your age.&quot;,
   &quot;type&quot;:&quot;decimal&quot;,
@@ -306,7 +303,6 @@
   ]
 }
 </code></pre>
-
 <p>There is some special UI logic required to handle a multiple choice question with the choice "none of the above". For this we use an extension that marks one of the choices as exclusive:</p>
 <h2 id="optionexclusive">optionExclusive</h2>
 <ul>
@@ -315,7 +311,7 @@
 </ul>
 <p>HL7 extension to specify that a multiple choice answer is <em>exclusive</em>, i.e. in a 'checkbox' multiple choice question, if you check this answer, all other options are taken to be unchecked, and should be greyed out in the UI. Mainly used for 'none of the above' types of answer choices.</p>
 <p>Example:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;valueCoding&quot;:{
     &quot;id&quot;: &quot;-1&quot;,
     &quot;display&quot;: &quot;None of the above&quot;,
@@ -328,14 +324,13 @@
   }
 }
 </code></pre>
-
 <h2 id="maxdecimalplaces">maxDecimalPlaces</h2>
 <ul>
 <li>URL: <code>http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces</code></li>
 <li>Location: Questionnaire.item (and sub-items)</li>
 </ul>
 <p>For questions of type <code>decimal</code>, specifies an integer value signifying the maximum number of decimal places that a user is allowed to fill in for his answer. If the extension is not present, the value is taken to be infinity. If the value is 0, the question type should be <code>integer</code> instead.</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;linkId&quot;:&quot;15&quot;,
   &quot;text&quot;:&quot;Give your age with 2 decimal precision.&quot;,
   &quot;type&quot;:&quot;decimal&quot;,
@@ -347,7 +342,6 @@
   ]
 }
 </code></pre>
-
 <h2 id="enable-when-operator">enable-when-operator</h2>
 <ul>
 <li>URL: <code>https://duodecim.fi/fhir/extensions/enable-when-operator</code></li>
@@ -361,7 +355,7 @@
 </ul>
 <p>The same extension may be present multiple times in a condition, to construct e.g. AND NOT.</p>
 <p>Example:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;linkId&quot;: &quot;23&quot;,
   &quot;required&quot;: true,
   &quot;type&quot;: &quot;boolean&quot;,

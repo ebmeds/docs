@@ -217,10 +217,9 @@
 <p>HTTPS is enabled by setting the environment variable <code>HTTP_MODE</code> to <code>https</code> when launching the <code>api-gateway</code> container. In addition to this, the system administrator must obtain/generate a .key and .crt file and bind mount them onto the container so they may be read by the <code>api-gateway</code> service.</p>
 <p>Inside the container, the path to the aforementioned key and certificate files are by default <code>ssl/server.key</code> and <code>ssl/server.crt</code> but may be configured with the environment variables <code>HTTPS_KEY_PATH</code> and <code>HTTPS_CERT_PATH</code>, respectively. The path can be absolute, or (like in the default case) relative to the execution directory.</p>
 <p>As an example, when starting the <code>api-gateway</code> service, it can be done like this:</p>
-<pre><code class="bash"># bind mount the .key and .crt files to match the default container-internal ssl/server.* path
+<pre><code class="language-bash"># bind mount the .key and .crt files to match the default container-internal ssl/server.* path
 docker run -d -it --name api-gateway -e HTTP_MODE=https -v path/to/generated.key:ssl/server.key:ro -v path/to/generated.crt:ssl/server.crt:ro api-gateway:latest
 </code></pre>
-
 <p>Note that if <code>api-gateway</code> is clustered onto several nodes, the files must be present on each server, either copied or shared over a network file system.</p>
 <h4 id="enabling-native-https-for-kibana">Enabling native HTTPS for <code>kibana</code></h4>
 <p>It is not recommended to open up the log viewing UI <code>kibana</code> for public use due to data sensitivity concerns. In any case, however Kibana is run, it is usually a good idea to encrypt the traffic. Kibana is an open source project with flexible configuration options, SSL being one of them. SSL configuration (<a href="https://www.elastic.co/guide/en/kibana/5.6/production.html#enabling-ssl"></a>) is done similarly to <code>api-gateway</code>, i.e. SSL is turned on and .key and .crt files are provided to the service. In this case, it is not done by environment variables but the Kibana configuration file. In the <code>ebmeds-docker</code> package, this is found in <code>kibana/config/kibana.yml</code>.</p>
@@ -248,13 +247,12 @@ docker run -d -it --name api-gateway -e HTTP_MODE=https -v path/to/generated.key
 <h1 id="error-handling">Error handling</h1>
 <p>EBMEDS 2.0 uses standard HTTP error codes in its API. In addition to this, a JSON body is returned with some additional information, if available.</p>
 <p>Example:</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
   &quot;statusCode&quot;: 400,
   &quot;message&quot;: &quot;Validation error: QuestionnaireResponse did not validate against Questionnaire: [more info]&quot;,
   &quot;code&quot;: &quot;validation&quot;
 }
 </code></pre>
-
 <ul>
 <li><code>statusCode</code>: The same numerical HTTP error code as in the HTTP headers.</li>
 <li><code>message</code>: A human-readable error message.</li>

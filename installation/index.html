@@ -235,13 +235,12 @@
 <li>Redis for storing user configuration and for caching optimizations</li>
 </ul>
 <p>The package is downloaded by running the command</p>
-<pre><code class="bash"># Get a copy of the EBMEDS Docker configuration
+<pre><code class="language-bash"># Get a copy of the EBMEDS Docker configuration
 git clone https://github.com/ebmeds/ebmeds-docker.git
 
 # We will be working from this directory for the rest of this installation guide
 cd ebmeds-docker
 </code></pre>
-
 <p>This repository does <em>not</em> contain the Docker images themselves, only startup scripts and configuration files. It also contains a sample <code>docker-compose.yml</code> file to get a Docker Swarm up and running with minimal effort. This file can be used as inspiration for more advanced setups.</p>
 <h2 id="configure-the-services">Configure the services</h2>
 <p>EBMEDS consists of a number of services:</p>
@@ -266,16 +265,14 @@ cd ebmeds-docker
 <p>If you don't already have it, you need a Duodecim-supplied username and password to be able to download the EBMEDS Docker images, which reside in a private repository at <code>quay.io</code>. The username is in the form <code>duodecim+yourname</code>.</p>
 <h3 id="start-the-service">Start the service</h3>
 <p>EBMEDS' Docker images are stored in a repository on quay.io. Vendor organizations are provided with a login username and password. The credentials are asked on each run of the <code>start.sh</code> command, which quickly gets cumbersome. Instead, the credentials can be passed as environment variables <code>DOCKER_LOGIN</code> and <code>DOCKER_PASSWORD</code>, like so:</p>
-<pre><code class="bash">DOCKER_LOGIN=duodecim+example DOCKER_PASSWORD=example sudo -E sh start.sh
+<pre><code class="language-bash">DOCKER_LOGIN=duodecim+example DOCKER_PASSWORD=example sudo -E sh start.sh
 </code></pre>
-
 <h3 id="configure-the-service">Configure the service</h3>
 <p>The main configuration files are <code>config.env</code> for system configuration, and <code>users.json</code> for configuring the actual features of EBMEDS. More in this on the <a href="configuration.md">configuration page</a>.</p>
 <h3 id="stopping-or-updating-the-service">Stopping or updating the service</h3>
 <p>Stopping is simply done by running the <code>stop.sh</code> script, potentially with super-user privileges. In other words,</p>
-<pre><code class="bash">sudo sh stop.sh
+<pre><code class="language-bash">sudo sh stop.sh
 </code></pre>
-
 <p>while updating the service (e.g. if you want to deploy a new version or change the configuration) is done by repeating the command given in <em>Start the service</em>.</p>
 <h2 id="file-system-access">File system access</h2>
 <p>Docker containers cannot per default persist data to disk, i.e. all changes to the container file system are lost when a container is shut down. Therefore, Docker must be explicitly told when it is allowed to read from or write to the filesystem on the server.</p>

@@ -192,8 +192,11 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#ebmeds-20-cloud">EBMEDS 2.0 Cloud</a></li>
+            <li class="second-level"><a href="#requirements-for-connecting">Requirements for connecting</a></li>
+                
             <li class="second-level"><a href="#endpoints">Endpoints</a></li>
                 
+                <li class="third-level"><a href="#ebmedscloudorg">ebmedscloud.org</a></li>
                 <li class="third-level"><a href="#post-apiv1cds-clinical-decision-support">POST /api/v1/cds - Clinical Decision Support</a></li>
                 <li class="third-level"><a href="#post-apiv1cmr-app-comprehensive-medication-review">POST /api/v1/cmr-app - Comprehensive Medication Review</a></li>
                 <li class="third-level"><a href="#post-apiv1dso-app-diagnosis-specific-overview">POST /api/v1/dso-app - Diagnosis Specific Overview</a></li>
@@ -206,7 +209,34 @@
         <div class="col-md-9" role="main">
 
 <h1 id="ebmeds-20-cloud">EBMEDS 2.0 Cloud</h1>
+<h2 id="requirements-for-connecting">Requirements for connecting</h2>
+<p>Connecting to ebmedscloud.org service requires the following
+- Client public IP address(es) to be whitelisted
+- Header token for test and for each customer, or for each registrar in case the same EHR installation is used by multiple registrars</p>
 <h2 id="endpoints">Endpoints</h2>
+<h3 id="ebmedscloudorg">ebmedscloud.org</h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Production</td>
+<td>ebmedscloud.org</td>
+</tr>
+<tr>
+<td>Staging</td>
+<td>stg.ebmedscloud.org</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>test.ebmedscloud.org</td>
+</tr>
+</tbody>
+</table>
 <h3 id="post-apiv1cds-clinical-decision-support"><code>POST /api/v1/cds</code> - Clinical Decision Support</h3>
 <h4 id="request">Request</h4>
 <h5 id="headers">Headers</h5>
@@ -314,7 +344,6 @@
 <h3 id="example-http-authorization-header">Example HTTP authorization header</h3>
 <pre><code>Authorization: Bearer 4696b545-5b00-4ebf-80f9-b05e098a174d
 </code></pre>
-
 <h3 id="receiving-and-managing-tokens">Receiving and managing tokens</h3>
 <p>The management and distribution of tokens is handled directly by Duodecim. The appropriate tokens are created and distributed to the user organization as a part of the integration process. Additional tokens may be created - and existing tokens may be deleted - as necessary.</p>
 <p>Please note that any tokens provided by Duodecim are strictly for use between the client application and EBMEDS 2.0 Cloud. Tokens must not be shared.</p></div>
